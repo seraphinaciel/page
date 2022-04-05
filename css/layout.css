@@ -1,0 +1,46 @@
+body{background:#f8f8f8}
+header{background: white;}
+.gnb{}
+.gnb h1{}
+.gnb_menu{}
+.gnb_menu nav{}
+.gnb_menu h2{}
+.gnb_menu .menu{}
+.gnb_menu .menu li{}
+.gnb_menu .menu a{}
+.gnb_menu .close{}
+
+
+main{}
+main section{margin:2em auto;}
+main section:first-child{margin-top:0;}
+
+
+footer{min-height:120px;background-color: white;}
+.fnb{display:flex;flex-wrap:wrap;justify-content: center;text-align: center;letter-spacing:0;color:#333}
+.fnb a{margin:0 .625rem;padding:.625rem 1em;border-radius:20px; text-transform: uppercase;position:relative;overflow: hidden}
+.fnb a::before{width:0;height:100%;background: rgb(39, 22, 88);transition: .5s ease; display:block;position:absolute;top:0;left:0; content: ""}
+.fnb a address{font-size:.875rem; font-weight:400;position:relative;z-index: 1;}
+.fnb a:hover::before{width:100%}
+.fnb a:hover address{color: white;}
+.fnb i{font-size: 1.375rem;margin-right:.625rem;}
+.fnb svg{margin-right:.625rem;border-radius:50%;border: 1px solid transparent;vertical-align: middle}
+.fnb a:hover svg{background: white;border-color: white}
+.fnb .copy{width:100%;text-transform: capitalize;margin-top: 1rem}
+
+@media all and (max-width:600px){
+.fnb a{padding:8px;margin:10px 0;border-radius:0;}
+.fnb a:nth-child(2){border-left: 1px  #ccc;border-right: 1px  #ccc;padding:8px 18px}
+}
+
+
+
+.btnTop {position: fixed;right: 10px;bottom: 10px;display: inline-block;z-index: 9;width: 40px;height: 40px;font-size: .875rem;color: whitesmoke;text-align: center;line-height: 3;letter-spacing: 1px;background: rgb(39, 22, 88);border-radius: 50%;padding: 5px;transform: translate3d(0, 50px, 0);transition: .3s cubic-bezier(.7, 1, .7, 1);opacity: 0;text-transform: uppercase;/*visibility: hidden;*/}
+.btnTop:hover {background: rgb(59, 22, 199);color:whitesmoke}
+.btnVisible {opacity: 1;transform: translate3d(0, 0, 0);}
+
+.pageIndicator{display: flex;justify-content: center;align-content: center}
+.pageIndicator button{width: 50%;height:150px; background: gray}
+.pageIndicator .prev{}
+.pageIndicator .list{width:10%;background: red}
+.pageIndicator .next{}
