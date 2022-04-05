@@ -58,27 +58,7 @@ function prev() {
 }
 
 	
-// 2. 버튼 비활성 생성 : 훨씬 간편하게 작업됨
-	
-//첫페이지, 마지막 페이지는 버튼 비활성
-if(localName === 0){
-	prevBtn.disabled = true;
-}else if(localName === 13){
-	nextBtn.disabled = true;
-}
 
-function prev() {
-	if (window.location == link) {
-		let pageUrl = String(localName - 1).padStart(2, "0");
-		window.location.href = 'subpage__'+pageUrl+'.html';
-	}
-}
-function next(){
-	if (window.location == link) {
-		let pageUrl = String(localName + 1).padStart(2, "0");
-		window.location.href = 'subpage__'+pageUrl+'.html';
-	}
-}
 </script>
 </body>
 </html>
