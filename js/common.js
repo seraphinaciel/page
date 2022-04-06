@@ -41,45 +41,4 @@ $(document).ready(function() {
 
 
 
-//subpage → 첫페이지, 마지막 페이지는 버튼 비활성
-const prevBtn = document.querySelector(".pageIndicator .prev");
-const nextBtn = document.querySelector(".pageIndicator .next");
-let currentLink = document.location.href; 
-const localFullName = document.URL.substring(document.URL.lastIndexOf('/') + 1);
-const localName = parseInt(localFullName.substring(localFullName.lastIndexOf('.'), 9));
 
-if(localName === 0){
-	prevBtn.disabled = true;
-}else if(localName === 13){
-	nextBtn.disabled = true;
-}
-
-function prev() {
-	if (window.location == currentLink) {
-		let pageUrl = String(localName - 1).padStart(2, "0");
-		window.location.href = 'subpage__'+pageUrl+'.html';
-		prevBtn.innerText = `hello`
-	}
-}
-function next(){
-	if (window.location == currentLink) {
-		let pageUrl = String(localName + 1).padStart(2, "0");
-		window.location.href = 'subpage__'+pageUrl+'.html';
-	}
-}
-
-function indicatorBox(){
-	if (window.location == currentLink) {
-		let pageUrl = String(localName - 1).padStart(2, "0");
-		window.location.href = 'subpage__'+pageUrl+'.html';
-	}
-}
-prevBtn.addEventListener("click", indicatorBox);
-nextBtn.addEventListener("click", indicatorBox);
-/*
-<div class="pageIndicator">
-	<button class="prev" onclick="prev()">이전</button>
-	<button class="list" onclick="location.href='../index.html'">목록</button>
-	<button class="next" onclick="next()">다음</button>
-</div>
-*/

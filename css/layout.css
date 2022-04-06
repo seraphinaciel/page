@@ -39,8 +39,4 @@ footer{min-height:120px;background-color: white;}
 .btnTop:hover {background: rgb(59, 22, 199);color:whitesmoke}
 .btnVisible {opacity: 1;transform: translate3d(0, 0, 0);}
 
-.pageIndicator{display: flex;justify-content: center;align-content: center}
-.pageIndicator button{width: 50%;height:150px; background: gray}
-.pageIndicator .prev{}
-.pageIndicator .list{width:10%;background: red}
-.pageIndicator .next{}
+
