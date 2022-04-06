@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 .sub_visual{padding: 8.021% 16vw;background: rgba(39, 22, 88, 0.7);position:relative;}
-.sub_visual::before{width:100%;height:100%;background: url(../images/main/title.jpg) center no-repeat;position:absolute;top:0;left:0;z-index: -1;content: ""}
+.sub_visual span{width:100%;height:100%;position:absolute;top:0;left:0;z-index: -1;}
 .sub_visual div{width:100%;max-width: 1320px;display:flex;justify-content: space-between;align-items: baseline;}
 .sub_visual h2{font-size: calc(4rem / var(--text-multiplier));color:white;text-transform: capitalize;letter-spacing:1px;justify-content: space-between;display:flex;align-items: self-end;}
 .sub_visual em{font-weight:400;display: block;font-size: 35%;text-transform: uppercase;letter-spacing: 2px}
@@ -33,4 +33,34 @@
 .story figure img{max-width: 100%;padding:0 2vw;}
 .story figcaption{max-width: 1440px;padding:6vw 16vw;margin: auto; font-size: 1rem;line-height: 2.2}
 .story figcaption h4{font-size: 1.125rem}
+
+
+
+.pageIndicator{max-width: 1640px;height:124px;margin: auto; display: flex;position: relative}
+.pageIndicator button{width:50%;}
+.pageIndicator div{height:100%;padding:0 50px;background: rgba(39, 22, 88, 0.7);display:flex;flex-wrap: wrap;align-content: center;color:white;transition: .3s ease-in-out}
+.pageIndicator span{padding:0 20px;display:flex;flex-direction: column;font-size: .875rem;letter-spacing: 10px;}
+.pageIndicator strong{letter-spacing:0; font-size: 1.125rem;font-weight:600}
+.pageIndicator i{font-size: 2rem;display:flex;flex-wrap: wrap;align-content: center;}
+.pageIndicator button:hover div{background: rgba(39, 22, 88, 0.94)}
+
+.pageIndicator button:disabled div{background:lightgray;color:gray;}
+
+.pageIndicator .prev{}
+.pageIndicator .prev div{text-align: left;}
+.pageIndicator .next{}
+.pageIndicator .next div{text-align: right;justify-content: flex-end}
+
+.pageIndicator .list{width: 90px;height:90px;background:white;position:absolute;top:calc(50% - 45px);left:calc(50% - 45px);text-align:center;text-transform: uppercase;letter-spacing: 5px;font-size:.875rem;font-weight:900;}
+.pageIndicator .list i{font-size: 1rem;padding-bottom:6px;display: block}
+
+@media all and (max-width:500px){
+.pageIndicator div{padding:0 30px;word-break: break-all}
+.pageIndicator strong{display:none}
+.pageIndicator .list{width: 60px;height:60px;background:white;position:absolute;top:calc(50% - 30px);left:calc(50% - 30px);font-size:.625rem;}
+}
+
+
+
+
 
