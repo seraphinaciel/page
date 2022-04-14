@@ -15,55 +15,139 @@
 <div data-include-path="../gnb.html"></div>
 
 <main id="content">
-	<section class="sub_visual">
+	<article class="sub_visual">
+		<span></span>
 		<div>
-			<h2>제목<em>renewal</em></h2>
+			<h2>제목</h2>
 			<h3><em>main design</em><em>publishing</em></h3>
 		</div>
+	</article>
+	
+	<article class="concept">
+		<div class="swiper mySwiper">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<h2>어린이 의회</h2>
+					<ul>
+						<li><strong>role</strong>publishing</li>
+						<li><strong>date</strong>2019.2.12. ~ 2.26.</li>
+						<li><strong>type</strong>국문</li>
+						<li><strong>note</strong>신입 디자이너의 디자인으로 코딩. 여백 및 폰트 크기가 뒤죽박죽이어서 여간 어려운게 아니었다.</li>
+					</ul>
+					<p><a href="https://council.iksan.go.kr/child/index.iksan" target="_blank" title="새창으로 열기">web more</a></p>
+				</div>
+				<div class="swiper-slide">
+					<h2>익산시의회 외국어</h2>
+					<ul>
+						<li><strong>role</strong>publishing</li>
+						<li><strong>date</strong>2019.3.4. ~ 3.19.</li>
+						<li><strong>type</strong>영, 중, 일</li>
+						<li><strong>note</strong>국문에서 변형된 디자인. 국문 디자인&amp;코딩이 자주 변경되어 독자적으로 만듦.</li>
+					</ul>
+					<p><a href="https://council.iksan.go.kr/eng/index.iksan" target="_blank" title="새창으로 열기">web more</a></p>
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+	</article>
+		
+	<article class="story">
+		<section class="codeBox">
+		<pre><code>
+&lt;ul class="introduce_org"&gt;
+  &lt;li class="org1"&gt; <em>//1단계</em>
+    &lt;span class="org_tit"&gt;의장&lt;/span&gt;
+    &lt;span class="org_tit"&gt;부의장&lt;/span&gt;
+    &lt;ul&gt;
+      &lt;li class="org2"&gt;&lt;span&gt;상임위원회&lt;/span&gt; <em>//2단계</em>
+        &lt;ul&gt;
+          &lt;li&gt;의회운영위원회&lt;/li&gt; <em>//3단계</em>
+          &lt;li&gt;기획행정위원회&lt;/li&gt; <em>//3단계</em>
+          &lt;li&gt;보건복지위원회&lt;/li&gt; <em>//3단계</em>
+          &lt;li&gt;산업건설위원회&lt;/li&gt; <em>//3단계</em>
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li class="org2"&gt;&lt;span&gt;특별위원회&lt;/span&gt; <em>//2단계</em>
+        &lt;ul&gt;
+          &lt;li&gt;예산결산위원회&lt;/li&gt; <em>//3단계</em>
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li class="org2"&gt;&lt;span&gt;사무국장&lt;/span&gt; <em>//2단계</em>
+        &lt;ul&gt;
+          &lt;li class="org_float1"&gt; <em>//3단계</em>
+            &lt;span&gt;전문위원&lt;/span&gt;
+          &lt;/li&gt;
+          &lt;li&gt;의정계&lt;/li&gt; <em>//3단계</em>
+          &lt;li&gt;의사계&lt;/li&gt; <em>//3단계</em>
+          &lt;li&gt;홍보자료계&lt;/li&gt; <em>//3단계</em>
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+		</code></pre>
+
+		<div>
+			<ul class="introduce_org">
+				<li class="org1"><span class="org_tit">의장</span><span class="org_tit">부의장</span>
+					<ul>
+						<li class="org2"><span>상임위원회</span>
+							<ul>
+								<li>의회운영위원회</li>
+								<li>기획행정위원회</li>
+								<li>보건복지위원회</li>
+								<li>산업건설위원회</li>
+							</ul>
+						</li>
+						<li class="org2"><span>특별위원회</span>
+							<ul>
+								<li>예산결산위원회</li>
+							</ul>
+						</li>
+						<li class="org2"><span>사무국장</span>
+							<ul>
+								<li class="org_float1"><span>전문위원</span></li>
+								<li>의정계</li>
+								<li>의사계</li>
+								<li>홍보자료계</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="storyTxt ">
+			<h4>계층구조에 맞는 조직도</h4>
+			<kbd>li</kbd>를 이용하여 계층 구조에 따라 조직도를 작업하여 웹 접근성을 높였다. 기존의 통 이미지에서 <kbd>:after, :before</kbd> 등 가상클래스를 이용하여 반응형으로 변화하는 조직도를 표현하였다.
+		</div>
 	</section>
-	<section class="concept">
-		<h2>제목</h2>
-		<ul>
-			<li><strong>work</strong>main design &amp; publishing</li>
-			<li><strong>date</strong>2022.01.01</li>
-			<li><strong>type</strong>responsible</li>
-			<li><strong>concept</strong>sfdsf sfdsf sfdsf sfdsf sfdsf 안녕하세요f sfdsf sfdsf sfdsf sfdsf sfdsf sfdsf sfdsf sfdsf sfdsf 안녕하세요f sfdsf sfdsf s안녕하세요f sfdsf </li>
-		</ul>
-		<p><a href="" target="_blank" title="새창으로 열기">web more</a></p>
-	</section>
-	<section class="story">
 		<figure>
-			<img src="images/content/jb_draft_01.jpg" alt="">
-			<figcaption><h4>이미지 제목</h4>이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. </figcaption>
+			<img src="../images/content/jb_draft_01.jpg" alt="">
+			<figcaption><h4>메인 시안 1</h4>2020.~2021.1. 메인 시안.</figcaption>
 		</figure>
 		<figure>
-			<img src="images/content/jb_final_02.jpg" alt="">
-			<figcaption><h4>이미지 제목</h4>이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. </figcaption>
+			<img src="../images/content/jb_final_02.jpg" alt="">
+			<figcaption><h4>메인 시안 2</h4>2021.3.~2022.1. 메인 시안.</figcaption>
 		</figure>
-	</section>
+	</article>
 </main>
 
-<div class="container">
-	<button class="prev" onclick="prev()">이전</button>
-	<button class="next" onclick="next()">다음</button>
+<div class="pageIndicator">
+	<button class="prev" title="이전 버튼 바로가기"></button>
+	<button class="list" onclick="location.href='../index.html'">list</button>
+	<button class="next" title="다음 버튼 바로가기"></button>
 </div>
-
 
 <div data-include-path="../fnb.html"></div>
 
 <a href="javascript:void(0);" class="btnTop">Top</a>
 
-<script src="../js/aos.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="../js/include.js"></script>
-<script src="../js/javaAndjquery.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="../js/swiperMouse.js"></script>
+<script src="../js/include.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/subpage.js"></script>
 
-
-
-
-
-
-
-<!--<script>AOS.init({easing: 'ease-in-out-sine'});</script>				-->
 </body>
 </html>

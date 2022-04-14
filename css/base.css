@@ -3,13 +3,12 @@
 body{min-width:375px;font-size:100%;margin:0;padding:0;font-family:NotoSans, '노토산스', '나눔고딕', Arial, sans-serif;color:#000;font-weight:400;letter-spacing:-.05em;word-break: keep-all}
 
 body, button, caption, div, dl, dt, dd, form, fieldset, figcaption, figure, footer, header, h1, h2, h3, h4, h5, h6, img, iframe, input, ul, ol, li, p, section, span, table, td, th, tr{margin:0;padding:0;border:none;-webkit-box-sizing:border-box;box-sizing:border-box;}
-header, footer, section{display:flex;flex-wrap:wrap;justify-content: center;align-content: center;}
+header, footer, article{display:flex;flex-wrap:wrap;justify-content: center;align-content: center;}
 
 a{display: inline-block}
 a, a:visited, a:active, a:hover{color:inherit;border:none;text-decoration:none;transition: .3s ease-in-out}
 ul, ol, li{list-style:none;}
 i, em, address{font-style:normal}
-/*div *, span *, p *{vertical-align:middle;}*/
 
 table{border-collapse:collapse;border-spacing:0;font-size:100%;}
 caption{width:0;height:0;line-height:0;text-indent:-9999px;}
@@ -34,6 +33,14 @@ hr{visibility:hidden;overflow:hidden;position:absolute;width:0;height:0;font-siz
 
 :root {
   --text-multiplier: 2;
+  --text-multiplier-02: 1;
+  --fs-thin:calc(.625rem / var(--text-multiplier-02));
+  --fs-light:calc(.875rem / var(--text-multiplier-02));
+  --fs-regular:calc(1rem / var(--text-multiplier-02));
+  --fs-medium:calc(1.125rem / var(--text-multiplier-02));
+  --fs-bold:calc(1.875rem / var(--text-multiplier-02));
+  --fs-black:calc(2rem / var(--text-multiplier));
+  --fs-heavy:calc(4rem / var(--text-multiplier));
 }
 
 @media (min-width: 700px) {
@@ -45,5 +52,11 @@ hr{visibility:hidden;overflow:hidden;position:absolute;width:0;height:0;font-siz
 @media (min-width: 1000px) {
   :root {
     --text-multiplier: 1;
+  }
+}
+@media (min-width: 2000px) {
+  :root {
+    --text-multiplier: 0.5;
+    --text-multiplier-02: 0.5;
   }
 }

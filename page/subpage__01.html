@@ -10,61 +10,116 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="../css/import.css" rel="stylesheet" type="text/css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <body>
-
-<div data-include-path="../include/gnb.html"></div>
+<div data-include-path="../gnb.html"></div>
 
 <main id="content">
-	<section class="sub_visual">
+	<article class="sub_visual">
+		<span></span>
 		<div>
-			<h2>제목<em>renewal</em></h2>
+			<h2>제목</h2>
 			<h3><em>main design</em><em>publishing</em></h3>
 		</div>
-	</section>
-	<section class="concept">
-		<h2>제목</h2>
+	</article>
+	<article class="concept">
 		<ul>
-			<li><strong>work</strong>main design &amp; publishing</li>
-			<li><strong>date</strong>2022.01.01</li>
-			<li><strong>type</strong>responsible</li>
-			<li><strong>concept</strong>sfdsf sfdsf sfdsf sfdsf sfdsf 안녕하세요f sfdsf sfdsf sfdsf sfdsf sfdsf sfdsf sfdsf sfdsf sfdsf 안녕하세요f sfdsf sfdsf s안녕하세요f sfdsf </li>
+			<li><strong>role</strong></li>
+			<li><strong>date</strong>2018.6.1. ~ 19.10.1.<br>(open : 1.3.)</li>
+			<li><strong>type</strong></li>
+			<li><strong>concept</strong>
+				<dl>
+					<dt>메인컨셉</dt>
+					<dd>사람과 자연의 조화, 깨끗함</dd>
+					<dt>컬러</dt>
+					<dd>자연에서 추출한 청록색을 이용하여 전북의 시원한 하늘과 깨끗한 물을 상징.</dd>
+					<dt>UI/UX</dt>
+					<dd>반응형으로 모바일 접근성을 높임과 동시에 PC와 동일한 서비스를 제공</dd>
+					<dd>사용자가 쉽고 빠르게 접근할 수 있도록 직관적인 레이아웃과 단순 명료한 콘텐츠로 구성</dd>
+				</dl>
+			</li>
 		</ul>
-		<p><a href="" target="_blank" title="새창으로 열기">web more</a></p>
+		<p><a href="https://www.jbares.go.kr/index.jbares" target="_blank" title="새창으로 열기">web more</a></p>
+	</article>
+	<article class="story">
+		<section class="codeBox">
+		<pre><code>
+$(document).ready(function(){
+  $(".specialty li").bind("mouseover", function(){
+  <em>//li에 마우스 오버할 때</em>
+  $(this).siblings("li").removeClass("on"); 
+  <em>//현재 요소를 제외한 형제요소(li)의 .on 삭제 </em>
+  $(this).addClass("on");
+  <em>//현재 요소에만 .on 표출</em>
+  })
+});
+		</code></pre>
+
+		<div class="specialty">
+			<img src="https://www.jbares.go.kr//images/sub/sub05/s5_2_map.gif" alt="전라북도 지도 이미지" usemap="#imgMap">
+			<ul>
+				<li class="si01 on"><a href="01"><span><img src="https://www.jbares.go.kr//images/sub/sub05/s5_2_simg01.jpg" alt=""></span><strong>전주시</strong></a></li>
+				<li class="si02"><a href="02"><span><img src="https://www.jbares.go.kr//images/sub/sub05/s5_2_simg02.gif" alt=""></span><strong>익산시</strong></a></li>
+				<li class="si03"><a href="03"><span><img src="https://www.jbares.go.kr//images/sub/sub05/s5_2_simg03.gif" alt=""></span><strong>군산시</strong></a></li>
+				<li class="si04"><a href="04"><span><img src="https://www.jbares.go.kr//images/sub/sub05/s5_2_simg04.gif" alt=""></span><strong>김제시</strong></a></li>
+				<li class="si05"><a href="05"><span><img src="https://www.jbares.go.kr//images/sub/sub05/s5_2_simg05.gif" alt=""></span><strong>정읍시</strong></a></li>
+				<li class="si06"><a href="06"><span><img src="https://www.jbares.go.kr//images/sub/sub05/s5_2_simg06.gif" alt=""></span><strong>남원시</strong></a></li>
+				<li class="si07"><a href="07"><span><img src="https://www.jbares.go.kr//images/sub/sub05/s5_2_simg07.gif" alt=""></span><strong>완주군</strong></a></li>
+				<li class="si08"><a href="08"><span><img src="https://www.jbares.go.kr//images/sub/sub05/s5_2_simg08.gif" alt=""></span><strong>부안군</strong></a></li>
+				<li class="si09"><a href="09"><span><img src="https://www.jbares.go.kr//images/sub/sub05/s5_2_simg09.gif" alt=""></span><strong>고창군</strong></a></li>
+				<li class="si10"><a href="10"><span><img src="https://www.jbares.go.kr//images/sub/sub05/s5_2_simg10.gif" alt=""></span><strong>무주군</strong></a></li>
+				<li class="si11"><a href="11"><span><img src="https://www.jbares.go.kr//images/sub/sub05/s5_2_simg11.gif" alt=""></span><strong>장수군</strong></a></li>
+				<li class="si12"><a href="12"><span><img src="https://www.jbares.go.kr//images/sub/sub05/s5_2_simg12.gif" alt=""></span><strong>진안군</strong></a></li>
+				<li class="si13"><a href="13"><span><img src="https://www.jbares.go.kr//images/sub/sub05/s5_2_simg13.gif" alt=""></span><strong>임실군</strong></a></li>
+				<li class="si14"><a href="14"><span><img src="https://www.jbares.go.kr//images/sub/sub05/s5_2_simg14.gif" alt=""></span><strong>순창군</strong></a></li>
+			</ul>
+		</div>
+
+		<script>
+			$(document).ready(function(){
+				$(".specialty li").bind("mouseover", function(){//li에 마우스 오버할 때
+					$(this).siblings("li").removeClass("on"); //현재 요소를 제외한 형제요소(li)의 .on 삭제 
+					$(this).addClass("on");//현재 요소에만 .on 표출
+					console.log(this)	
+				})
+				//$(this).trigger("click")//마우스만 가져다 대도 클릭 이벤트가 발생(강제)
+			});
+		</script>
+
+		<div class="storyTxt ">
+			<h4>wjs</h4>
+			txt <kbd>div</kbd>
+			<p class="btn"><a href="https://seraphinaciel.github.io/%EB%8B%AC%EB%A0%A5/" title="" target="_blank">반응형 달력 게시판 스킨 사례 보기</a></p>
+		</div>
 	</section>
-	<section class="story">
 		<figure>
-			<img src="images/content/jb_draft_01.jpg" alt="">
-			<figcaption><h4>이미지 제목</h4>이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. </figcaption>
+			<img src="../images/content/jb_draft_01.jpg" alt="">
+			<figcaption><h4>메인 시안 1</h4>2020.~2021.1. 메인 시안.</figcaption>
 		</figure>
 		<figure>
-			<img src="images/content/jb_final_02.jpg" alt="">
-			<figcaption><h4>이미지 제목</h4>이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. </figcaption>
+			<img src="../images/content/jb_final_02.jpg" alt="">
+			<figcaption><h4>메인 시안 2</h4>2021.3.~2022.1. 메인 시안.</figcaption>
 		</figure>
-	</section>
+	</article>
 </main>
 
-
-<div class="container">
-	<button class="prev" onclick="prev()">이전</button>
-	<button class="next" onclick="next()">다음</button>
+<div class="pageIndicator">
+	<button class="prev" title="이전 버튼 바로가기"></button>
+	<button class="list" onclick="location.href='../index.html'">list</button>
+	<button class="next" title="다음 버튼 바로가기"></button>
 </div>
 
 <div data-include-path="../fnb.html"></div>
 
 <a href="javascript:void(0);" class="btnTop">Top</a>
 
-<script src="../js/aos.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!--<script type="text/javascript" src="../js/include.js"></script>-->
-<script type="text/javascript" src="../js/include11.js"></script>
-<script src="../js/javaAndjquery.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="../js/swiperMouse.js"></script>
+<script src="../js/include.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/subpage.js"></script>
 
-
-
-
-
-
-<!--<script>AOS.init({easing: 'ease-in-out-sine'});</script>				-->
 </body>
 </html>

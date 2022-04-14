@@ -1,36 +1,22 @@
 @charset "utf-8";
 
-/*22-3-29 title 재코딩 하다가 말았음*/
-.title{width:100%;padding:8.021% 1.125rem; background: rgba(39, 22, 88, 0.7);position:relative;
-	
-	
-	display:flex;flex-wrap:wrap;flex-direction: column; justify-content: center;}
-/*.title::before{width:100%;height:100%;background: url(../images/main/title.jpg) center no-repeat;position:absolute;top:0;left:0;z-index: -1;content: ""}*/
+.title{width:100%; background: rgba(39, 22, 88, 0.7);position:relative;}
+.title::before{width:100%;height:100%;background: url(../images/main/title.jpg) center no-repeat;position:absolute;top:0;left:0;z-index: -1;content: "";background-size: cover;}
+.title div{width:100%;padding:8.021% 1.625rem;}
 .title h2{color:white;font-size:calc(4.4375rem / var(--text-multiplier));font-weight:100;text-transform: capitalize;}
 .title strong{font-weight: 500;display:block}
-.title p{font-size: .875rem; font-weight:500;color: white;}
+.title p{font-size: var(--fs-light); font-weight:500;color: white;padding-top: .625rem}
 .title span{display:inline-block;padding-right:1em;text-transform: uppercase}
 .title span::before{content:"#"}
 
-@media all and (min-width:1200px){
-.title {padding:8.021% 0}
-.title h2{width:1110px;}
+@media all and (min-width:800px){
+.title div{padding:4vw 9.625vw}
 }
-/*
-.title article{width:100%;padding:8.021% 2rem; background: rgba(39, 22, 88, 0.7);position:relative;flex-direction: column;display:flex;flex-wrap:wrap;justify-content: center;align-content: center;}
-.title article::before{width:100%;height:100%;background: url(../images/main/title.jpg) center no-repeat;position:absolute;top:0;left:0;z-index: -1;content: ""}
-.title h2{color:white;font-size:calc(4.4375rem / var(--text-multiplier));font-weight:100;text-transform: capitalize;}
-.title h2 strong{font-weight: 500;display:block}
-.title p{max-width:1440px;font-size: .875rem; font-weight:500;color: white;}
-.title p span{display:inline-block;padding-right:1em;text-transform: uppercase}
-.title p span::before{content:"#"}
 @media all and (min-width:1200px){
-.title article{padding:8.021% 0}
-.title h2{width:1110px;}
+.title div{min-width: 850px;width: 50vw;padding:4vw 0;}
 }
-*/
 
-.history{margin:auto;display: flex;flex-wrap: wrap;justify-content: space-around}
+.history{margin:auto;display: flex;flex-wrap: wrap;justify-content: space-around;font-size: var(--fs-regular)}
 .history li{width:50%;padding:1.625em}
 .history li strong{margin-bottom: 1rem; display: block}
 .history li em{color:#656565;margin-bottom: .5rem; display: block}
@@ -39,30 +25,36 @@
 .history li{width:33.333%;}
 }
 @media all and (min-width:1200px){
-.history{width:70vw;padding:4vw 8vw;}
+.history{min-width: 850px;width: 50vw;padding:4vw 0}
 }
 
 .projectList{padding:0 1.625rem}
-.projectList figure{width:100%;position: relative;display: none}
+.projectList figure{width:50%;padding-top: 50%;height:0;position: relative;overflow: hidden;display: none;}
 .projectList figcaption{position:absolute;top:0;left:0;bottom:0;right:0;}
-.projectList figure a{width:100%;height:100%;font-size: .875rem;color: white;text-transform: uppercase;display: flex;flex-direction: column;justify-content: center;align-items: center;transition: .3s ease-in-out;}
-.projectList h3{font-size: 1rem;font-weight:500;letter-spacing:0;position: absolute;top:1rem;left:1rem;}
-.projectList figure i{font-size: 2rem;opacity: 0;}
-.projectList span{letter-spacing: 0;opacity: 0;}
-.projectList figure a:hover{background: rgba(39, 22, 88, .7);}
+.projectList figure a{width:100%;height:100%;font-size: .875rem;color: #222;text-transform: uppercase;display: flex;flex-direction: column;justify-content: center;align-items: center;transition: .3s ease-in-out;}
+.projectList h3{font-size: var(--fs-bold);font-weight: 600;letter-spacing:0;position: absolute;top:1rem;left:1rem;text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;color: white;}
+.projectList img{max-width:fit-content; height:100%;position:absolute;top:0;left:50%;transform: translate(-50%,0)}
+.projectList figure i{font-size: var(--fs-black);opacity: 0;transition: .3s ease}
+.projectList span{font-size:  calc(1.275rem / var(--text-multiplier));letter-spacing: 0;opacity: 0;}
+.projectList figure a:hover{background: rgba(39, 22, 88, .7);color: white}
+.projectList figure a:hover i{animation:slide-right 1s cubic-bezier(.25,.46,.45,.94) both infinite}
+@keyframes slide-right{0%{transform:translateX(0)}50%{transform:translateX(10px)}}
 .projectList figure a:hover i,
 .projectList figure a:hover span{opacity: 1}
+.projectList figure a:hover h3{position: static;text-shadow:none;margin-bottom: 2%;}
+.projectList figure:nth-of-type(8) img{left:0;transform: translate(0)}
 
-@media all and (min-width:700px){
-.projectList figure{width:50%}
-}
 @media all and (min-width:1200px){
 .projectList{width:70vw;}
 }
+@media all and (min-width:2000px){
+.projectList figure{width:25%;padding-top: 25%;}
+.projectList h3{font-size: var(--fs-regular);}
+}
 
 .projectList p{width:100%;text-align: center;}
-.btn_readMore{text-transform: uppercase;font-size: .875rem;letter-spacing: .5rem;font-weight:600;margin-top:2rem;}
-.btn_readMore i{display:block;font-size: 1.875rem;}
+.btn_readMore{text-transform: uppercase;font-size: var(--fs-light);letter-spacing: .5rem;font-weight:600;margin-top:2rem;}
+.btn_readMore i{display:block;font-size: var(--fs-bold);}
 .btn_readMore:hover{background: rgb(39, 22, 88);color: white;padding:.5rem 1rem;}
 .noContent{cursor:default}
 .noContent:hover{background:0;color:inherit;padding:0;}

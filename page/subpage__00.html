@@ -15,56 +15,112 @@
 <div data-include-path="../gnb.html"></div>
 
 <main id="content">
-	<section class="sub_visual">
+	<article class="sub_visual">
+		<span></span>
 		<div>
-			<h2>제목<em>renewal</em></h2>
+			<h2>제목</h2>
 			<h3><em>main design</em><em>publishing</em></h3>
 		</div>
-	</section>
-	<section class="concept">
-		<h2>제목</h2>
+	</article>
+	<article class="concept">
 		<ul>
-			<li><strong>work</strong>main design &amp; publishing</li>
-			<li><strong>date</strong>2022.01.01</li>
+			<li><strong>role</strong>main design &amp; publishing</li>
+			<li><strong>date</strong>2018.01.12. ~ 01.18.</li>
 			<li><strong>type</strong>responsible</li>
-			<li><strong>concept</strong>sfdsf sfdsf sfdsf sfdsf sfdsf 안녕하세요f sfdsf sfdsf sfdsf sfdsf sfdsf sfdsf sfdsf sfdsf sfdsf 안녕하세요f sfdsf sfdsf s안녕하세요f sfdsf </li>
+			<li><strong>concept</strong>
+				<dl>
+					<dt>메인컨셉</dt>
+					<dd>말과 사람의 소통</dd>
+					<dt>컬러</dt>
+					<dd>장수군의 심볼컬러를 그대로 메인 컬러로 사용하여 장수군의 정체성확립하고 초록들판까지 함께 상징</dd>
+					<dt>UI/UX</dt>
+					<dd>상단 비주얼영역은 넓고 크게 보여주며 말과 사람의 컨셉에 어울리고, 체험 유도를 극대화시킬 수 있는 비주얼을 채택.</dd>
+					<dd>하단 영역은 메트로UI를 사용하여 트랜디한 UI구조로 빠른 정보 이동에 용이하도록 구성</dd>
+					<dd>길찾기 버튼 등 사용자의 편의를 고려</dd>
+				</dl>
+			</li>
 		</ul>
 		<p><a href="" target="_blank" title="새창으로 열기">web more</a></p>
-	</section>
-	<section class="story">
+	</article>
+	<article class="story">
+		<section class="codeBox">
+			<pre><code>
+const accordion = document.querySelectorAll(".accordion");
+for (let i = 0; i < accordion.length; i++) {
+accordion[i].addEventListener("click", function() {
+this.classList.toggle("active");
+const panel = this.nextElementSibling;
+if (panel.style.maxHeight) {
+  panel.style.maxHeight = '';
+} else { 
+  panel.style.maxHeight = panel.scrollHeight + "px";
+}
+});
+}
+			</code></pre>
+
+			<div class="faq">
+				<button class="accordion">자주묻는 질문 1</button>
+				<div class="panel">
+					<p><br>자주묻는 질문 1<br><br></p>
+					<span><a href="#">수정</a><a href="#">삭제</a></span>
+				</div>
+				<button class="accordion">자주묻는 질문  2</button>
+				<div class="panel">
+					<p><br>자주묻는 질문 <br><br></p>
+				</div>
+				<button class="accordion">자주묻는 질문  3</button>
+				<div class="panel" id="borderimg1">
+					<p><br>자주묻는 질문 <br><br></p>
+				</div>
+				<script>
+					const accordion = document.querySelectorAll(".accordion");
+					for (let i = 0; i < accordion.length; i++) {
+						accordion[i].addEventListener("click", function() {
+							this.classList.toggle("active");
+							const panel = this.nextElementSibling;
+							if (panel.style.maxHeight) {
+								panel.style.maxHeight = '';
+							} else { 
+								panel.style.maxHeight = panel.scrollHeight + "px";
+							}
+						});
+					}
+				</script> 
+			</div>
+
+			<div class="storyTxt">
+				<h4>자주찾는 질문의 아코디언 탭</h4>
+				나중에 추가된 게시판. 간단하게 처리 할 수 있어 보였기에 처리하였다. <kbd>button</kbd>의 개수만큼 내용이 나오며 <kbd>nextElementSibling</kbd>를 통해 <kbd>button</kbd>뒤의 <kbd>div.panel</kbd>만 가져왔다.
+			</div>
+		</section>
 		<figure>
-			<img src="../images/content/jb_draft_01.jpg" alt="">
-			<figcaption><h4>이미지 제목</h4>이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. </figcaption>
+			<img src="../images/content/js_final_p.jpg" alt="">
+			<img src="../images/content/js_final_m.jpg" alt="">
+			<figcaption>
+				<h4>최종 메인 시안</h4>
+				관공서 웹에이전시에 처음 들어와서 맡은 홈페이지. 처음으로 웹접근성을 100% 다 맞춰서 작업하였다.
+			</figcaption>
 		</figure>
-		<figure>
-			<img src="../images/content/jb_final_02.jpg" alt="">
-			<figcaption><h4>이미지 제목</h4>이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. 이미지 내용입니다. </figcaption>
-		</figure>
-	</section>
+	</article>
 </main>
 
-
 <div class="pageIndicator">
-	<button class="prev">이전</button>
-	<button class="list" onclick="location.href='../index.html'">목록</button>
-	<button class="next">다음</button>
+	<button class="prev" title="이전 버튼 바로가기"></button>
+	<button class="list" onclick="location.href='../index.html'">list</button>
+	<button class="next" title="다음 버튼 바로가기"></button>
 </div>
-
-<!--<div data-include-path="snb.html"></div>-->
+<!-- href="#" onclick="return false;" 참고 : https://minimal-dev.tistory.com/28-->
 <div data-include-path="../fnb.html"></div>
 
 <a href="javascript:void(0);" class="btnTop">Top</a>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="../js/include.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="../js/swiperMouse.js"></script>
+<script src="../js/include.js"></script>
 <script src="../js/common.js"></script>
+<script src="../js/subpage.js"></script>
 
-
-
-
-
-
-
-<!--<script>AOS.init({easing: 'ease-in-out-sine'});</script>				-->
 </body>
 </html>
