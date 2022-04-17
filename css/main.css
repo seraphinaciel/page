@@ -1,0 +1,288 @@
+.title {
+  width: 100%;
+  background: rgba(39, 22, 88, 0.7);
+  position: relative;
+}
+
+.title::before {
+  width: 100%;
+  height: 100%;
+  background: url(../images/main/title.jpg) center no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  content: "";
+  background-size: cover;
+}
+
+.title div {
+  width: 100%;
+  padding: 8.021% 1.625rem;
+}
+
+.title h2 {
+  color: white;
+  font-size: calc(4.4375rem / var(--text-multiplier));
+  font-weight: 100;
+  text-transform: capitalize;
+}
+
+.title h2 strong {
+  font-weight: 500;
+  display: block;
+}
+
+.title p {
+  font-size: var(--fs-light);
+  font-weight: 500;
+  color: white;
+  padding-top: .625rem;
+}
+
+.title p span {
+  display: inline-block;
+  padding-right: 1em;
+  text-transform: uppercase;
+}
+
+.title p span::before {
+  content: "#";
+}
+
+@media all and (min-width: 800px) {
+  .title div {
+    padding: 4vw 9.625vw;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .title div {
+    min-width: 850px;
+    width: 50vw;
+    padding: 4vw 0;
+  }
+}
+
+.history {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: var(--fs-regular);
+}
+
+.history li {
+  width: 50%;
+  padding: 1.625em;
+}
+
+.history li strong {
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.history li em {
+  color: #656565;
+  margin-bottom: .5rem;
+  display: block;
+}
+
+@media all and (min-width: 800px) {
+  .history {
+    padding: 4vw 8vw;
+  }
+  .history li {
+    width: 33.333%;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .history {
+    min-width: 850px;
+    width: 50vw;
+    padding: 4vw 0;
+  }
+}
+
+.projectList {
+  padding: 0 1.625rem;
+}
+
+.projectList figure {
+  width: 50%;
+  padding-top: 50%;
+  height: 0;
+  position: relative;
+  overflow: hidden;
+  display: none;
+}
+
+.projectList figure img {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.projectList figure figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.projectList figure figcaption a {
+  width: 100%;
+  height: 100%;
+  font-size: .875rem;
+  color: #222;
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.projectList figure figcaption a:hover {
+  background: rgba(39, 22, 88, 0.7);
+  color: white;
+}
+
+.projectList figure figcaption a:hover i {
+  -webkit-animation: slide-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+          animation: slide-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+}
+
+.projectList figure figcaption h3 {
+  font-size: var(--fs-bold);
+  font-weight: 600;
+  letter-spacing: 0;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;
+  color: white;
+}
+
+.projectList figure figcaption span {
+  font-size: calc(1.275rem / var(--text-multiplier));
+  letter-spacing: 0;
+  opacity: 0;
+}
+
+.projectList figure figcaption i {
+  font-size: var(--fs-black);
+  opacity: 0;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.projectList p {
+  width: 100%;
+  text-align: center;
+}
+
+.projectList p .btn_readMore {
+  text-transform: uppercase;
+  font-size: var(--fs-light);
+  letter-spacing: .5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+.projectList p .btn_readMore i {
+  display: block;
+  font-size: var(--fs-bold);
+}
+
+.projectList p .btn_readMore:hover {
+  background: #271658;
+  color: white;
+  padding: .5rem 1rem;
+}
+
+.projectList p .btn_readMore.noContent {
+  cursor: default;
+}
+
+.projectList p .btn_readMore.noContent:hover {
+  background: 0;
+  color: inherit;
+  padding: 0;
+}
+
+@-webkit-keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+}
+
+.projectList figure a:hover span, .projectList figure a:hover i {
+  opacity: 1;
+}
+
+.projectList figure a:hover h3 {
+  position: static;
+  text-shadow: none;
+  margin-bottom: 2%;
+}
+
+.projectList figure:nth-of-type(8) img {
+  left: 0;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+}
+
+@media all and (min-width: 1200px) {
+  .projectList {
+    width: 70vw;
+  }
+}
+
+@media all and (min-width: 2000px) {
+  .projectList figure {
+    width: 25%;
+    padding-top: 25%;
+  }
+  .projectList h3 {
+    font-size: var(--fs-regular);
+  }
+}
