@@ -1,22 +1,57 @@
-$breakpoints: ('small': (max-width: 767px),
-    'medium': (max-width: 992px),
-    'large': (max-width: 1200px),
-) !default;
+$minTablet: 768px;
+$minPc: 1000px;
+$minWide: 2000px;
 
-@mixin respond-to($breakpoint) {
-
-    // If the key exists in the map
-    @if map-has-key($breakpoints, $breakpoint) {
-
-        // Prints a media query based on the value
-        @media #{inspect(map-get($breakpoints, $breakpoint))} {
-            @content;
-        }
+@mixin responsive($device) {
+  @if $device=="tablet" {
+    @media all and (min-width: $minTablet) {
+      $text-mult: 1.5;
+      @content;
     }
+  }
 
-    // If the key doesn't exist in the map
-    @else {
-        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-        +"Available breakpoints are: #{map-keys($breakpoints)}.";
+  @else if $device=="pc" {
+    @media all and (min-width: $minPc) {
+      $text-mult: 1;
+      @content;
     }
+  }
+
+  @else if $device=="wide" {
+    @media screen and (min-width: $minWide) {
+      $text-mult: 0.5;
+      @content;
+    }
+  }
 }
+
+@mixin fontSizeStyle($size, $weight) {
+  font-size:calc(#{$size} / 2);
+  font-weight: #{$weight};
+  @if $size>=0.625rem and $size < 1.875rem
+    { font-size:calc(#{$size} / 1);
+      color:red !important
+    }
+  @include responsive (tablet) {
+    font-size:calc(#{$size} / 1.5);
+    @if $size>=0.625rem and $size < 1.875rem
+    { font-size:calc(#{$size} / 1);
+      color:red !important
+    }
+  }
+
+  @include responsive (pc) {
+    font-size:calc(#{$size} / 1);
+    @if $size>=0.625rem and $size < 1.875rem
+    { font-size:calc(#{$size} / 1);
+      color:red !important
+    }
+  }
+
+  @include responsive (wide) {
+    font-size:calc(#{$size} / 0.5);
+  }
+
+
+}
+

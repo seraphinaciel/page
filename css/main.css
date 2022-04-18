@@ -23,9 +23,27 @@
 
 .title h2 {
   color: white;
-  font-size: calc(4.4375rem / var(--text-multiplier));
+  font-size: calc(4.4375rem / 2);
   font-weight: 100;
   text-transform: capitalize;
+}
+
+@media all and (min-width: 768px) {
+  .title h2 {
+    font-size: calc(4.4375rem / 1.5);
+  }
+}
+
+@media all and (min-width: 1000px) {
+  .title h2 {
+    font-size: calc(4.4375rem / 1);
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .title h2 {
+    font-size: calc(4.4375rem / 0.5);
+  }
 }
 
 .title h2 strong {
@@ -34,8 +52,8 @@
 }
 
 .title p {
-  font-size: var(--fs-light);
   font-weight: 500;
+  font-size: .875rem;
   color: white;
   padding-top: .625rem;
 }
@@ -73,7 +91,7 @@
       flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  font-size: var(--fs-regular);
+  font-size: .history fs-regular;
 }
 
 .history li {
@@ -176,7 +194,7 @@
 }
 
 .projectList figure figcaption h3 {
-  font-size: var(--fs-bold);
+  font-size: calc(1.875rem / 2);
   font-weight: 600;
   letter-spacing: 0;
   position: absolute;
@@ -186,17 +204,54 @@
   color: white;
 }
 
+@media all and (min-width: 768px) {
+  .projectList figure figcaption h3 {
+    font-size: calc(1.875rem / 1.5);
+  }
+}
+
+@media all and (min-width: 1000px) {
+  .projectList figure figcaption h3 {
+    font-size: calc(1.875rem / 1);
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .projectList figure figcaption h3 {
+    font-size: calc(1.875rem / 0.5);
+  }
+}
+
 .projectList figure figcaption span {
-  font-size: calc(1.275rem / var(--text-multiplier));
+  font-size: calc(1.275rem / .projectList figure figcaption span text-multiplier);
   letter-spacing: 0;
   opacity: 0;
 }
 
 .projectList figure figcaption i {
-  font-size: var(--fs-black);
+  font-size: calc(2rem / 2);
+  font-weight: 400;
   opacity: 0;
   -webkit-transition: .3s ease;
   transition: .3s ease;
+}
+
+@media all and (min-width: 768px) {
+  .projectList figure figcaption i {
+    font-size: calc(2rem / 1.5);
+  }
+}
+
+@media all and (min-width: 1000px) {
+  .projectList figure figcaption i {
+    font-size: calc(2rem / 1);
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .projectList figure figcaption i {
+    font-size: calc(2rem / 0.5);
+  }
 }
 
 .projectList p {
@@ -206,15 +261,58 @@
 
 .projectList p .btn_readMore {
   text-transform: uppercase;
-  font-size: var(--fs-light);
-  letter-spacing: .5rem;
+  font-size: calc(0.875rem / 2);
   font-weight: 600;
+  font-size: calc(0.875rem / 1);
+  color: red !important;
+  letter-spacing: .5rem;
   margin-top: 2rem;
+}
+
+@media all and (min-width: 768px) {
+  .projectList p .btn_readMore {
+    font-size: calc(0.875rem / 1.5);
+    font-size: calc(0.875rem / 1);
+    color: red !important;
+  }
+}
+
+@media all and (min-width: 1000px) {
+  .projectList p .btn_readMore {
+    font-size: calc(0.875rem / 1);
+    font-size: calc(0.875rem / 1);
+    color: red !important;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .projectList p .btn_readMore {
+    font-size: calc(0.875rem / 0.5);
+  }
 }
 
 .projectList p .btn_readMore i {
   display: block;
-  font-size: var(--fs-bold);
+  font-size: calc(1.875rem / 2);
+  font-weight: 400;
+}
+
+@media all and (min-width: 768px) {
+  .projectList p .btn_readMore i {
+    font-size: calc(1.875rem / 1.5);
+  }
+}
+
+@media all and (min-width: 1000px) {
+  .projectList p .btn_readMore i {
+    font-size: calc(1.875rem / 1);
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .projectList p .btn_readMore i {
+    font-size: calc(1.875rem / 0.5);
+  }
 }
 
 .projectList p .btn_readMore:hover {
@@ -283,6 +381,25 @@
     padding-top: 25%;
   }
   .projectList h3 {
-    font-size: var(--fs-regular);
+    font-size: calc(1rem / 2);
+    font-weight: 400;
+    font-size: calc(1rem / 1);
+    color: red !important;
+  }
+}
+
+@media all and (min-width: 2000px) and (min-width: 768px) {
+  .projectList h3 {
+    font-size: calc(1rem / 1.5);
+    font-size: calc(1rem / 1);
+    color: red !important;
+  }
+}
+
+@media all and (min-width: 2000px) and (min-width: 1000px) {
+  .projectList h3 {
+    font-size: calc(1rem / 1);
+    font-size: calc(1rem / 1);
+    color: red !important;
   }
 }

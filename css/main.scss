@@ -1,12 +1,14 @@
-@import 'mixin';
+@import 'variable','_mixin';
 
 .title{width:100%; background: rgba(39, 22, 88, 0.7);position:relative;
     &::before{width:100%;height:100%;background: url(../images/main/title.jpg) center no-repeat;position:absolute;top:0;left:0;z-index: -1;content: "";background-size: cover;}
     div{width:100%;padding:8.021% 1.625rem;}
-    h2{color:white;font-size:calc(4.4375rem / var(--text-multiplier));font-weight:100;text-transform: capitalize;
+    h2{color:white;@include fontSizeStyle(4.4375rem, 100);text-transform: capitalize;
         strong{font-weight: 500;display:block}
     }
-    p{font-size: var(--fs-light); font-weight:500;color: white;padding-top: .625rem;
+	p{font-weight: 500;font-size: .875rem;
+        // @include fontSizeStyle(0.625rem, 500);
+        color: white;padding-top: .625rem;
         span{display:inline-block;padding-right:1em;text-transform: uppercase;
             &::before{content:"#"}
         }
@@ -14,27 +16,26 @@
 }
 
 @media all and (min-width:800px){
-.title div{padding:4vw 9.625vw}
+    .title div{padding:4vw 9.625vw}
 }
 @media all and (min-width:1200px){
-.title div{min-width: 850px;width: 50vw;padding:4vw 0;}
+    .title div{min-width: 850px;width: 50vw;padding:4vw 0;}
 }
 
-.history{margin:auto;display: flex;flex-wrap: wrap;justify-content: space-around;font-size: var(--fs-regular);
+.history{margin:auto;display: flex;flex-wrap: wrap;justify-content: space-around;font-size: #{&fs-regular};
     li{width:50%;padding:1.625em;
         strong{margin-bottom: 1rem; display: block;}
         em{color:#656565;margin-bottom: .5rem; display: block;}
     }
 }
 @media all and (min-width:800px){
-.history{padding:4vw 8vw;
-    li{width:33.333%;}
-}
+    .history{padding:4vw 8vw;
+        li{width:33.333%;}
+    }
 }
 @media all and (min-width:1200px){
-.history{min-width: 850px;width: 50vw;padding:4vw 0}
+    .history{min-width: 850px;width: 50vw;padding:4vw 0}
 }
-
 
 .projectList{padding:0 1.625rem;
     figure{width:50%;padding-top: 50%;height:0;position: relative;overflow: hidden;display: none;
@@ -45,14 +46,14 @@
                     i{animation:slide-right 1s cubic-bezier(.25,.46,.45,.94) both infinite}
                 }
             }
-            h3{font-size: var(--fs-bold);font-weight: 600;letter-spacing:0;position: absolute;top:1rem;left:1rem;text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;color: white;}
-            span{font-size:  calc(1.275rem / var(--text-multiplier));letter-spacing: 0;opacity: 0;}
-            i{font-size: var(--fs-black);opacity: 0;transition: .3s ease}
+			h3{@include fontSizeStyle(1.875rem, 600);letter-spacing:0;position: absolute;top:1rem;left:1rem;text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;color: white;}
+            span{font-size:  calc(1.275rem / #{&text-multiplier});letter-spacing: 0;opacity: 0;}
+			i{@include fontSizeStyle(2rem, 400);opacity: 0;transition: .3s ease}
         }
     }
     p{width:100%;text-align: center;
-        .btn_readMore{text-transform: uppercase;font-size: var(--fs-light);letter-spacing: .5rem;font-weight:600;margin-top:2rem;
-            i{display:block;font-size: var(--fs-bold);}
+		.btn_readMore{text-transform: uppercase;@include fontSizeStyle(0.875rem, 600);letter-spacing: .5rem;margin-top:2rem;
+			i{display:block;@include fontSizeStyle(1.875rem, 400);}
             &:hover{background: rgb(39, 22, 88);color: white;padding:.5rem 1rem;}
             &.noContent{cursor:default;
                 &:hover{background:0;color:inherit;padding:0;}
@@ -76,7 +77,5 @@
 }
 @media all and (min-width:2000px){
 .projectList figure{width:25%;padding-top: 25%;}
-.projectList h3{font-size: var(--fs-regular);}
+.projectList h3{@include fontSizeStyle(1rem, 400)}
 }
-
-
