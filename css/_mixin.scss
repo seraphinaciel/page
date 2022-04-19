@@ -1,0 +1,57 @@
+$minTablet: 768px;
+$minPc: 1000px;
+$minWide: 2000px;
+
+@mixin responsive($device) {
+  @if $device=="tablet" {
+    @media all and (min-width: $minTablet) {
+      $text-mult: 1.5;
+      @content;
+    }
+  }
+
+  @else if $device=="pc" {
+    @media all and (min-width: $minPc) {
+      $text-mult: 1;
+      @content;
+    }
+  }
+
+  @else if $device=="wide" {
+    @media screen and (min-width: $minWide) {
+      $text-mult: 0.5;
+      @content;
+    }
+  }
+}
+
+@mixin fontSizeStyle($size, $weight) {
+  font-size:calc(#{$size} / 2);
+  font-weight: #{$weight};
+  @if $size>=0.625rem and $size < 1.875rem
+    { font-size:calc(#{$size} / 1);
+      color:red !important
+    }
+  @include responsive (tablet) {
+    font-size:calc(#{$size} / 1.5);
+    @if $size>=0.625rem and $size < 1.875rem
+    { font-size:calc(#{$size} / 1);
+      color:red !important
+    }
+  }
+
+  @include responsive (pc) {
+    font-size:calc(#{$size} / 1);
+    @if $size>=0.625rem and $size < 1.875rem
+    { font-size:calc(#{$size} / 1);
+      color:red !important
+    }
+  }
+
+  @include responsive (wide) {
+    font-size:calc(#{$size} / 0.5);
+  }
+
+
+}
+
