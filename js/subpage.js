@@ -57,9 +57,18 @@ nextBtn.innerHTML = `<div><span>다음프로젝트<strong>${subTitle[NEXT_NUM]}<
 listBtn.href='../index.html';
 listBtn.innerText = `list`;
 
-
+//button disabled in first & last page
+console.log(localName)
+if (localName === 0) {
+	prevBtn.classList.add("disabled")
+	prevBtn.innerHTML = `<div><span>이전프로젝트 <strong>없습니다</strong></span></div>`;
+} else if (localName === 8) {
+	nextBtn.classList.add("disabled")
+	nextBtn.innerHTML = `<div><span>다음프로젝트 <strong>없습니다</strong></span></div>`;
+}
 
 //indicator : click to prev&next button linked page
+/*
 const indicatorBtn = document.querySelectorAll("aside a")
 indicatorBtn.forEach((currntBtn, index) => {
 	currntBtn.addEventListener("click", (e) => {
@@ -73,7 +82,7 @@ indicatorBtn.forEach((currntBtn, index) => {
 		e.preventDefault();
 	});
 });
-
+*/
 
 
 
