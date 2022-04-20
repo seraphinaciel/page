@@ -141,3 +141,4 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('article[id]').forEach((section) => {
 	observer.observe(section);
 });
+

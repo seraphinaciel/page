@@ -31,7 +31,7 @@ hr{visibility:hidden;overflow:hidden;position:absolute;width:0;height:0;font-siz
 ::selection {background:#ffcb00;text-shadow:none;}
 
 
-:root {
+/* :root {
   --text-multiplier: 2;
   --text-multiplier-02: 1;
   --fs-thin:calc(.625rem / var(--text-multiplier-02));
@@ -59,4 +59,4 @@ hr{visibility:hidden;overflow:hidden;position:absolute;width:0;height:0;font-siz
     --text-multiplier: 0.5;
     --text-multiplier-02: 0.5;
   }
-}
+} */

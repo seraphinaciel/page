@@ -26,32 +26,24 @@ $minWide: 2000px;
 }
 
 @mixin fontSizeStyle($size, $weight) {
-  font-size:calc(#{$size} / 2);
-  font-weight: #{$weight};
-  @if $size>=0.625rem and $size < 1.875rem
-    { font-size:calc(#{$size} / 1);
-      color:red !important
-    }
-  @include responsive (tablet) {
-    font-size:calc(#{$size} / 1.5);
-    @if $size>=0.625rem and $size < 1.875rem
-    { font-size:calc(#{$size} / 1);
-      color:red !important
+  @if $size>=0.625rem and $size < 1.875rem{font-size:calc(#{$size} / 1);}
+  @else{
+    font-size:calc(#{$size} / 2);
+    font-weight: #{$weight};  
+    @include responsive (tablet) {
+      font-size:calc(#{$size} / 1.5);
+    }  
+    @include responsive (pc) {
+      font-size:calc(#{$size} / 1);
     }
   }
-
-  @include responsive (pc) {
-    font-size:calc(#{$size} / 1);
-    @if $size>=0.625rem and $size < 1.875rem
-    { font-size:calc(#{$size} / 1);
-      color:red !important
-    }
-  }
-
   @include responsive (wide) {
     font-size:calc(#{$size} / 0.5);
   }
-
-
 }
 
+@mixin bgColor($style, $rgb, $a) {
+    @if $rgb == "cPoint" {#{$style} : rgba(255,203,0,$a);}
+    @else if $rgb == "cMain"{#{$style} : rgba(19,229,71,$a);}
+    @else if $rgb == "cSub"{#{$style} : rgba(28,204,228,$a);}
+}

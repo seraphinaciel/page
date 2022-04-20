@@ -26,6 +26,28 @@
 		</div>
 	</article>
 	
+	<article class="graph-wrap">
+		<div class="graph" data-percent="70"><strong>javascript</strong></div>
+		<div class="graph" data-percent="80"><strong>javascript</strong></div>
+		<div class="graph" data-percent="90"><strong>javascript</strong></div>
+		<div class="graph" data-percent="100"><strong>javascript</strong></div>
+	</article>
+	<script>
+		// graph
+		const graph = document.querySelectorAll(".graph");
+		graph.forEach((g, k) => {
+			console.log(g, k)
+			const dataPercent = g.dataset.percent;
+			console.log(dataPercent)
+			let graphNum = 0
+			const graphAnimation = setInterval(() => {
+				g.dataset.percent = graphNum;
+				g.style.background = `conic-gradient(#4F98FF 0 ${graphNum}%, #DEDEDE ${graphNum}% 100% )`;
+				graphNum++ >= dataPercent && clearInterval(graphAnimation)
+			}, 10)
+		});
+
+	</script>
 	<ul class="history">
 		<li><strong>(재) 백제직업전문학교</strong><em>2014. 8 ~ 2015. 1</em>안드로이드 앱개발</li>
 		<li><strong>GTQ 그래픽기술자격1급</strong><em>2015. 6. 12</em>컴퓨터그래픽 디자인 능력을 평가하는 국가공인자격시험.</li>
@@ -67,7 +89,7 @@
 			let numUrl =String(num).padStart(2, "0");
 	
 			projectList.prepend(figure); /*최근에서 과거*/
-			console.log(projectName, projectName.title)
+			// console.log(projectName, projectName.title)
 			figure.innerHTML =`
 	<img src="images/thumnail/img${numUrl}.jpg" alt="">
 	<figcaption>

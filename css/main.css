@@ -1,6 +1,6 @@
 .title {
   width: 100%;
-  background: rgba(39, 22, 88, 0.7);
+  background: rgba(19, 229, 71, 0.7);
   position: relative;
 }
 
@@ -82,6 +82,82 @@
   }
 }
 
+.graph-wrap .graph {
+  width: 40vw;
+  height: 40vw;
+  margin: 0 auto;
+  border-radius: 50%;
+  position: relative;
+  text-align: center;
+}
+
+.graph-wrap .graph::before {
+  width: 70%;
+  line-height: 0;
+  padding: 18vw 0 10vw;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 15%;
+  top: 15%;
+  display: block;
+  content: attr(data-percent) "%";
+  -webkit-transform: skew(-0.03deg);
+          transform: skew(-0.03deg);
+  margin: auto;
+  font-size: calc(1.875rem / 2);
+  font-weight: 900;
+}
+
+@media all and (min-width: 768px) {
+  .graph-wrap .graph::before {
+    font-size: calc(1.875rem / 1.5);
+  }
+}
+
+@media all and (min-width: 1000px) {
+  .graph-wrap .graph::before {
+    font-size: calc(1.875rem / 1);
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .graph-wrap .graph::before {
+    font-size: calc(1.875rem / 0.5);
+  }
+}
+
+.graph-wrap .graph strong {
+  position: absolute;
+  top: 32%;
+  left: 0;
+  right: 0;
+  font-weight: 400;
+}
+
+@media all and (min-width: 768px) {
+  .graph-wrap {
+    padding: 4vw 8vw;
+  }
+  .graph-wrap .graph {
+    width: 20vw;
+    height: 20vw;
+    max-width: 190px;
+    max-height: 190px;
+  }
+  .graph-wrap .graph::before {
+    padding: 48% 0 23%;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .graph-wrap {
+    min-width: 850px;
+    width: 50vw;
+    padding: 4vw 0 0;
+  }
+}
+
 .history {
   margin: auto;
   display: -webkit-box;
@@ -91,7 +167,13 @@
       flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  font-size: .history fs-regular;
+  font-size: calc(1rem / 1);
+}
+
+@media screen and (min-width: 2000px) {
+  .history {
+    font-size: calc(1rem / 0.5);
+  }
 }
 
 .history li {
@@ -184,7 +266,7 @@
 }
 
 .projectList figure figcaption a:hover {
-  background: rgba(39, 22, 88, 0.7);
+  background: rgba(19, 229, 71, 0.7);
   color: white;
 }
 
@@ -223,9 +305,15 @@
 }
 
 .projectList figure figcaption span {
-  font-size: calc(1.275rem / .projectList figure figcaption span text-multiplier);
+  font-size: calc(1.125rem / 1);
   letter-spacing: 0;
   opacity: 0;
+}
+
+@media screen and (min-width: 2000px) {
+  .projectList figure figcaption span {
+    font-size: calc(1.125rem / 0.5);
+  }
 }
 
 .projectList figure figcaption i {
@@ -261,25 +349,9 @@
 
 .projectList p .btn_readMore {
   text-transform: uppercase;
-  font-size: calc(0.875rem / 2);
-  font-weight: 600;
   font-size: calc(0.875rem / 1);
   letter-spacing: .5rem;
   margin-top: 2rem;
-}
-
-@media all and (min-width: 768px) {
-  .projectList p .btn_readMore {
-    font-size: calc(0.875rem / 1.5);
-    font-size: calc(0.875rem / 1);
-  }
-}
-
-@media all and (min-width: 1000px) {
-  .projectList p .btn_readMore {
-    font-size: calc(0.875rem / 1);
-    font-size: calc(0.875rem / 1);
-  }
 }
 
 @media screen and (min-width: 2000px) {
@@ -313,7 +385,7 @@
 }
 
 .projectList p .btn_readMore:hover {
-  background: #271658;
+  background: #13e547;
   color: white;
   padding: .5rem 1rem;
 }
@@ -378,25 +450,6 @@
     padding-top: 25%;
   }
   .projectList h3 {
-    font-size: calc(1rem / 2);
-    font-weight: 400;
     font-size: calc(1rem / 1);
-    color: red !important;
-  }
-}
-
-@media all and (min-width: 2000px) and (min-width: 768px) {
-  .projectList h3 {
-    font-size: calc(1rem / 1.5);
-    font-size: calc(1rem / 1);
-    color: red !important;
-  }
-}
-
-@media all and (min-width: 2000px) and (min-width: 1000px) {
-  .projectList h3 {
-    font-size: calc(1rem / 1);
-    font-size: calc(1rem / 1);
-    color: red !important;
   }
 }
