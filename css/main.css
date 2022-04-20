@@ -264,7 +264,6 @@
   font-size: calc(0.875rem / 2);
   font-weight: 600;
   font-size: calc(0.875rem / 1);
-  color: red !important;
   letter-spacing: .5rem;
   margin-top: 2rem;
 }
@@ -273,7 +272,6 @@
   .projectList p .btn_readMore {
     font-size: calc(0.875rem / 1.5);
     font-size: calc(0.875rem / 1);
-    color: red !important;
   }
 }
 
@@ -281,7 +279,6 @@
   .projectList p .btn_readMore {
     font-size: calc(0.875rem / 1);
     font-size: calc(0.875rem / 1);
-    color: red !important;
   }
 }
 

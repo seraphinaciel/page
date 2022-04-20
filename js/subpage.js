@@ -48,13 +48,13 @@ aside.appendChild(document.createElement("a")).classList.add("next");
 const prevBtn = document.querySelector("aside .prev");
 const nextBtn = document.querySelector("aside .next");
 const listBtn = document.querySelector("aside .list");
-prevBtn.href="#";
+prevBtn.href= 'subpage__' + PAGE_NUM_PREV + '.html';
 prevBtn.style = `background:url('../images/thumnail/img${PAGE_NUM_PREV}.jpg') top;background-size:cover;`;
 prevBtn.innerHTML = `<div><i class="material-icons-round">arrow_back</i><span>이전프로젝트<strong>${subTitle[PREV_NUM]}</strong></span></div>`;
-nextBtn.href="#";
+nextBtn.href= 'subpage__' + PAGE_NUM_NEXT + '.html';
 nextBtn.style = `background:url('../images/thumnail/img${PAGE_NUM_NEXT}.jpg') top;background-size:cover;`;
 nextBtn.innerHTML = `<div><span>다음프로젝트<strong>${subTitle[NEXT_NUM]}</strong></span><i class="material-icons-round">arrow_forward</i></div>`;
-listBtn.href="#";
+listBtn.href='../index.html';
 listBtn.innerText = `list`;
 
 //button disabled in first & last page
@@ -68,7 +68,8 @@ if (localName === 0) {
 }
 
 //indicator : click to prev&next button linked page
-const indicatorBtn = document.querySelectorAll("aside button")
+/*
+const indicatorBtn = document.querySelectorAll("aside a")
 indicatorBtn.forEach((currntBtn, index) => {
 	currntBtn.addEventListener("click", (e) => {
 		if (index == 0) {
@@ -81,7 +82,7 @@ indicatorBtn.forEach((currntBtn, index) => {
 		e.preventDefault();
 	});
 });
-
+*/
 
 
 
