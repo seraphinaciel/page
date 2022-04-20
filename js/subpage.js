@@ -74,7 +74,7 @@ indicatorBtn.forEach((currntBtn, index) => {
 		if (index == 0) {
 			window.location.href = 'subpage__' + PAGE_NUM_PREV + '.html';
 		} else if (index == 2) {
-			window.location.href = 'subpage__' + PAGE_NUM_NEXT + '.html';
+			e.href = 'subpage__' + PAGE_NUM_NEXT + '.html';
 		} else {
 			window.location.href ='../index.html';
 		}
