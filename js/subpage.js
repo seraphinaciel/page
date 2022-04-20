@@ -72,10 +72,13 @@ const indicatorBtn = document.querySelectorAll("aside button")
 indicatorBtn.forEach((currntBtn, index) => {
 	currntBtn.addEventListener("click", (e) => {
 		if (index == 0) {
+			console.log("left")
 			window.location.href = 'subpage__' + PAGE_NUM_PREV + '.html';
 		} else if (index == 2) {
-			e.href = 'subpage__' + PAGE_NUM_NEXT + '.html';
+			console.log("right")
+			window.location.href = 'subpage__' + PAGE_NUM_NEXT + '.html';
 		} else {
+			console.log("list")
 			window.location.href ='../index.html';
 		}
 		e.preventDefault();
