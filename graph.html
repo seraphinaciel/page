@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://seraphinaciel.github.io/portfolio/css/base.css">
+	<link rel="stylesheet" href="https://seraphinaciel.github.io/portfolio/css/layout.css">
+	<link rel="stylesheet" href="https://seraphinaciel.github.io/portfolio/css/main.css">
+	<style>
+	
+
+.pie-chart {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #ddd;
+ }
+ 
+.pie {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+  .pie.less {
+    clip: rect(0px, 80px, 80px, 40px);
+  }
+  .pie.more {
+    clip: rect(0, 80px, 80px, 0);
+  }
+
+.pie-piece {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #fc595d;
+  clip: rect(0px, 80px, 80px, 40px);
+}
+.less .pie-piece.right {
+display: none;
+}
+.more .pie-piece.right {
+display: block;
+}
+  
+.percentage {
+  background: #fff;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fc595d;
+  font-size: 20px;
+ }
+ 
+.unit {
+  font-size: 16px;
+}
+
+	</style>
+</head>
+<body>
+	<main id="content">
+		<ul class="history">
+			<li>dlksfjdl</li>
+			<li>dlksfjdl</li>
+			<li>dlksfjdl</li>
+		</ul>
+		
+		<div class="pie-chart">
+			<div class="pie less">
+				<div class="pie-piece" style="transform:rotate( -0deg )"></div>
+<!--				<div class="pie-piece" style="transform:rotate( -108deg )"></div>-->
+<!--				<div class="pie-piece" style="transform:rotate( -180deg + (3.6 * 50%) )"></div>-->
+				<div class="pie-piece right"></div>
+			</div>
+			<div class="percentage">
+				20<span class="unit">%</span>
+			</div>
+		</div>
+
+		<hr />
+
+		<div class="pie-chart">
+			<div class="pie more">
+				<!-- 51% <= percentage < 100& -->
+				<!-- rotate: 3.6 * (percentage - 50 ) -->
+				<div class="pie-piece" style="transform:rotate( 180deg )"></div>
+<!--				<div class="pie-piece" style="transform:rotate( 144.0deg )"></div>-->
+<!--				<div class="pie-piece" style="transform:rotate( 3.6 * (100% - 50deg))"></div>-->
+				<div class="pie-piece right"></div>
+			</div>
+			<div class="percentage">
+				90<span class="unit">%</span>
+			</div>
+		</div>
+
+<style>
+
+
+.graph {
+  width: calc(100% - 16px);
+  padding-bottom: calc(100% - 16px);
+  margin: 0 auto;
+  border-radius: 50%;
+  position: relative;
+  text-align: center;
+}
+
+.graph::before {
+  color: #fff;
+  width: 70%;
+  background: #264057;
+  border-radius: 50%;
+  position: absolute;
+  left: 15%;
+  top: 15%;
+  display: block;
+  content: attr(data-percent)'%';
+  transform: skew(-0.03deg);
+  margin: auto;
+  font-weight: 800;
+  font-size: 2vw;
+  padding: calc(35% - 1.3vw) 0;
+}
+.graph-wrap {
+  margin: 0 40vw 1rem 40vw;
+}
+</style>
+
+
+<div class="graph-wrap">
+    <div class="graph" data-percent="70"></div>
+    <div class="graph"></div>
+</div>
+
+
+
+<script>
+
+const graph = document.getElementsByClassName("graph")[0]
+const graph2 = document.getElementsByClassName("graph")[1]
+const dataPercent = graph.dataset.percent;
+let totalNum = 72, totalNum2 = 12
+
+let graphNum = 0
+const graphAnimation = setInterval(() => {
+	//0.01초 마다 타이머가 시작된다.
+	graph.dataset.percent = graphNum;
+	//graphNum을 graph의 data-percent에 넣어, graph::before에서 0 ~ dataPercent까지의 증가하는 과정을 보여준다.
+	graph.style.background = `conic-gradient(#4F98FF 0 ${graphNum}%, #DEDEDE ${graphNum}% 100% )`;
+	//그래프에 conic-gradient 추가하여 색을 입힌다. graphNum이 증가하는 만큼 그래프에 색이 입혀진다.
+	graphNum++ >= dataPercent && clearInterval(graphAnimation)
+	//graphNum가 1씩 증가하며 graphNum가 dataPercent와 같거나 클 경우, graphAnimation을 멈춘다 (clearInterval : setInterval 멈추기)
+}, 10)
+
+let t5 = 0
+const graphAnimation2 = setInterval(() => {
+  graph2.dataset.percent = t5
+  graph2.style.background = totalNum > t5 ? `conic-gradient(#4F98FF 0 ${t5}%, #dedede ${t5}% 100% )` : 
+  totalNum + totalNum2 > t5 ? `conic-gradient(#4F98FF 0 ${totalNum}%, #f44336 ${totalNum}% ${t5}%, #dedede ${t5}% 100%)` : 
+  `conic-gradient(#4F98FF 0 ${totalNum}%, #f44336 ${totalNum}% ${totalNum + totalNum2}%, #dedede ${totalNum + totalNum2}% 100%)`;
+  t5++ >= totalNum + totalNum2 && clearInterval(graphAnimation2);
+}, 10)
+</script>
+	</main>
+</body>
+</html>
