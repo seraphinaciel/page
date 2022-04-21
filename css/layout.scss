@@ -22,42 +22,42 @@ main{
 }
 
 footer{
-    min-height:120px;background-color: white;
+    min-height:120px;background: white;
     .fnb{display:flex;flex-wrap:wrap;justify-content: center;text-align: center;letter-spacing:0;color:#333;
         a{
            margin:0 .625rem;padding:.625rem 1em;border-radius:20px; text-transform: uppercase;position:relative;overflow: hidden;
             &:before{width:0;height:100%;@include bgColor(background, cMain, 1);transition: .5s ease; display:block;position:absolute;top:0;left:0; content: "";}
-            address{font-size:var(--fs-light); font-weight:400;position:relative;z-index: 1;}
+            address{@include fontSizeStyle(.875rem, 400);position:relative;z-index: 1;}
             &:hover{
                 &::before{width:100%}
                 address{color: white;}
                 svg{background: white;border-color: white}
             }
         }
-        i{font-size:calc(1.375rem / var(--text-multiplier));margin-right:.625rem;}
+        i{@include fontSizeStyle(1.375rem, 400);margin-right:.625rem;}
         svg{margin-right:.625rem;border-radius:50%;border: 1px solid transparent;vertical-align: middle}
-        .copy{width:100%;text-transform: capitalize;margin-top: 1rem;font-size: var(--fs-regular)}
+        .copy{width:100%;text-transform: capitalize;margin-top: 1rem;@include fontSizeStyle(15rem, 400);}
     }
 }
 
 @media all and (max-width:600px){
-.fnb{
-    a{padding:8px;margin:10px 0;border-radius:0;
-        &:nth-child(2){border-left: 1px  #ccc;border-right: 1px  #ccc;padding:8px 18px}
-    }
-} 
+	.fnb{
+		a{padding:8px;margin:10px 0;border-radius:0;
+			&:nth-child(2){border-left: 1px  #ccc;border-right: 1px  #ccc;padding:8px 18px}
+		}
+	} 
 }
 
 
 
-.btnTop {position: fixed;right: 10px;bottom: 10px;display: inline-block;z-index: 9;width: 40px;height: 40px;font-size: .875rem;color: whitesmoke;text-align: center;line-height: 3;letter-spacing: 1px;background: rgb(39, 22, 88);border-radius: 50%;padding: 5px;transform: translate3d(0, 50px, 0);transition: .3s cubic-bezier(.7, 1, .7, 1);opacity: 0;text-transform: uppercase;
+.btnTop {position: fixed;right: 10px;bottom: 10px;display: inline-block;z-index: 9;width: 40px;height: 40px;@include fontSizeStyle(.875rem, 400);color: whitesmoke;text-align: center;line-height: 3;letter-spacing: 1px;background: rgb(39, 22, 88);border-radius: 50%;padding: 5px;transform: translate3d(0, 50px, 0);transition: .3s cubic-bezier(.7, 1, .7, 1);opacity: 0;text-transform: uppercase;
     &:hover {@include bgColor(background, cMain, 1);color:whitesmoke}
     &.btnVisible {opacity: 1;transform: translate3d(0, 0, 0);}
 }
 
 .sub_visual{padding: 8vw 10vw;@include bgColor(background, cMain, 0.7);position:relative;
     span{width:100%;height:100%;position:absolute;top:0;left:0;z-index: -1;}
-    h2{font-weight:500;font-size: var(--fs-heavy);color:white;text-transform: capitalize;letter-spacing:1px;margin-bottom:1rem;}
+    h2{@include fontSizeStyle(4rem, 500);color:white;text-transform: capitalize;letter-spacing:1px;margin-bottom:1rem;}
     h3{
         @include fontSizeStyle(2rem, 600);color: white;text-align: right;width:100%;
         em{font-weight:900;font-size: 100%;letter-spacing: 1em}
@@ -72,7 +72,7 @@ footer{
             }
             + .story {padding-top: 10vh;}
             .progress {width: 100%;height: 4px;background: #ccc;justify-content: flex-start;
-                .bar {height: 100%;background: #ffcb00;width: 0%;}
+                .bar {height: 100%;@include bgColor(background, cPoint, 0.7);width: 0%;}
             }
         }
     }
@@ -80,17 +80,17 @@ footer{
 
 @media all and (min-width:600px){
 .sub_visual{padding:4vw 16vw}
-.sub_visual h2{margin-bottom: var(--fs-heavy);}
+.sub_visual h2{@include fontSizeStyle(4rem, 600);}
 }
 @media all and (min-width:1000px){
 .sub_visual div{width: 70vw;}
 }
 
 .concept{padding:0 10vw;flex-direction: column;
-    h3{font-size: calc(2.25rem / var(--text-multiplier));font-weight:600;width: 100%;margin-bottom:1rem;}
+    h3{@include fontSizeStyle(2.25rem, 600);width: 100%;margin-bottom:1rem;}
     ul{max-width: 1320px;display:flex;flex-wrap: wrap;
-        li{width: 33.33%;padding:0 1rem 1rem 0;text-transform: capitalize;font-size: var(--fs-light);line-height: 2.8;
-            strong{font-weight: 900;font-size: var(--fs-regular);letter-spacing: 0; display:block}
+        li{width: 33.33%;padding:0 1rem 1rem 0;text-transform: capitalize;@include fontSizeStyle(.875rem, 400);line-height: 2.8;
+            strong{@include fontSizeStyle(15rem, 900);letter-spacing: 0; display:block}
             &:last-child{width:100%;}
             dl{display:flex;flex-wrap: wrap;width:100%;line-height:1.9;
                 dt{width:20%;padding: .5rem .5rem 0 0;margin-top: .5rem;
@@ -104,7 +104,7 @@ footer{
         }
     }
     p{text-align: center;margin-top: 2rem;
-        a{background: rgba(39, 22, 88, 1);color: white;padding:.875rem 4em;text-transform: uppercase;font-size:var(--fs-light); letter-spacing: 0;
+        a{background: rgba(39, 22, 88, 1);color: white;padding:.875rem 4em;text-transform: uppercase;@include fontSizeStyle(.875rem, 400);letter-spacing: 0;
         }
         &:hover{border-bottom-right-radius: 30px; text-decoration: overline}
     }
@@ -131,17 +131,17 @@ footer{
 .story .colBox-6 span:first-of-type{flex:1 1 60% !important;}
 .story .colBox-7 span:first-of-type{flex:1 1 70% !important;}
 
-.story figcaption{width: 100%;padding: 6vw 10vw;margin: auto; font-size: var(--fs-regular);line-height: 2.2;text-align: left}
-.story figcaption h4{font-size:var(--fs-medium)}
+.story figcaption{width: 100%;padding: 6vw 10vw;margin: auto; @include fontSizeStyle(1rem, 400);line-height: 2.2;text-align: left}
+.story figcaption h4{@include fontSizeStyle(1.125rem, 400);}
 @media all and (min-width:700px){
 .story figcaption{padding:6vw 0;}
 }
 .codeBox{margin:2rem auto;}
 .codeBox pre{padding: 1rem;margin: 0;overflow: auto;}
-.codeBox code{width:100%;font-size:var(--fs-regular);line-height: 1.6;display:block;white-space: pre-wrap}
+.codeBox code{width:100%;@include fontSizeStyle(1rem, 400);line-height: 1.6;display:block;white-space: pre-wrap}
 .codeBox code em{color:orangered;}
-.codeBox .storyTxt{ padding: 6vw 8vw;margin:auto;font-size: var(--fs-regular);color:#464646;}
-.codeBox .storyTxt h4{font-size:var(--fs-medium);color:#222;padding:1rem 0;}
+.codeBox .storyTxt{ padding: 6vw 8vw;margin:auto;@include fontSizeStyle(1rem, 400);color:#464646;}
+.codeBox .storyTxt h4{@include fontSizeStyle(1.125rem, 400);color:#222;padding:1rem 0;}
 .codeBox kbd{color:gray;background:#f8f8f8;}
 @media all and (min-width:700px){
 .codeBox{display:flex;flex-wrap:wrap;}
@@ -158,7 +158,7 @@ footer{
 .codeBox pre + div{width:50%;padding: 1rem;background: white;box-sizing: border-box}
 }
 .story .btn{margin-top: 2rem;}
-.story .btn a{background: rgba(39, 22, 88, 1);color: white;padding:.875rem 4rem;text-transform: uppercase;font-size:var(--fs-light); letter-spacing: 0}
+.story .btn a{background: rgba(39, 22, 88, 1);color: white;padding:.875rem 4rem;text-transform: uppercase;@include fontSizeStyle(.875rem, 400);letter-spacing: 0}
 .story .btn a{margin:.4rem .4rem 0 0}
 .story .btn a:hover{border-bottom-right-radius: 30px; text-decoration: overline}
 
@@ -169,7 +169,7 @@ aside{min-height: 134px;padding:0 1.625rem;margin:2rem auto; display: flex;posit
     a{width:50%;transition: .3s ease-in-out;
         div{height:100%;padding:0 30px;background: rgba(39, 22, 88, 0.7);display:flex;flex-wrap: wrap;align-content: center;color:white;transition: .3s ease-in-out;word-break: break-all}
         i{font-size: 1.25rem;display:flex;flex-wrap: wrap;align-content: center;}
-        span{padding:0 10px;display:flex;flex-direction: column;justify-content: center;letter-spacing: 0;font-size: var(--fs-light);
+        span{padding:0 10px;display:flex;flex-direction: column;justify-content: center;letter-spacing: 0;@include fontSizeStyle(.875rem, 400);
             strong{display:none}
         }
         &.prev{
@@ -180,8 +180,8 @@ aside{min-height: 134px;padding:0 1.625rem;margin:2rem auto; display: flex;posit
             div{text-align: right;justify-content: flex-end}
             &:hover{border-bottom-right-radius:60px;overflow: hidden}
         } 
-        &.list{width: 60px;line-height: 60px; background:white;position:absolute;top:calc(50% - 30px);left:calc(50% - 30px);text-align:center;text-transform: uppercase;letter-spacing: 5px;font-size:var(--fs-thin);font-weight:900;transition: .3s ease-in-out;
-            i{font-size: var(--fs-regular);padding-bottom:6px;display: block}
+        &.list{width: 60px;line-height: 60px; background:white;position:absolute;top:calc(50% - 30px);left:calc(50% - 30px);text-align:center;text-transform: uppercase;letter-spacing: 5px;@include fontSizeStyle(.625rem, 400);font-weight:900;transition: .3s ease-in-out;
+            i{@include fontSizeStyle(1rem, 400);padding-bottom:6px;display: block}
             &:hover{color:rgb(59, 22, 199);border-radius: 50%}
         }
         &:hover{
@@ -199,8 +199,8 @@ aside{min-height: 134px;padding:0 1.625rem;margin:2rem auto; display: flex;posit
 @media all and (min-width:500px){
 aside div{padding:0 5vw;}
 aside span{padding:0 20px;letter-spacing: 10px;}
-aside strong{display: block;letter-spacing:0; font-size: var(--fs-medium);font-weight:600}
-aside i{font-size: var(--fs-black);}
+aside strong{display: block;letter-spacing:0; @include fontSizeStyle(1.125rem, 400);font-weight:600}
+aside i{@include fontSizeStyle(2rem, 400);}
 aside .list{width: 90px;line-height:90px;top:calc(50% - 45px);left:calc(50% - 45px);font-size:.875rem;}
 }
 
