@@ -97,22 +97,11 @@ footer .fnb .copy {
   width: 100%;
   text-transform: capitalize;
   margin-top: 1rem;
-  font-size: calc(15rem / 2);
-  font-weight: 400;
-}
-@media all and (min-width: 768px) {
-  footer .fnb .copy {
-    font-size: calc(15rem / 1.5);
-  }
-}
-@media all and (min-width: 1000px) {
-  footer .fnb .copy {
-    font-size: calc(15rem / 1);
-  }
+  font-size: calc(1rem / 1);
 }
 @media screen and (min-width: 2000px) {
   footer .fnb .copy {
-    font-size: calc(15rem / 0.5);
+    font-size: calc(1rem / 0.5);
   }
 }
 
@@ -346,24 +335,13 @@ footer .fnb .copy {
   }
 }
 .concept ul li strong {
-  font-size: calc(15rem / 2);
-  font-weight: 900;
+  font-size: calc(1rem / 1);
   letter-spacing: 0;
   display: block;
 }
-@media all and (min-width: 768px) {
-  .concept ul li strong {
-    font-size: calc(15rem / 1.5);
-  }
-}
-@media all and (min-width: 1000px) {
-  .concept ul li strong {
-    font-size: calc(15rem / 1);
-  }
-}
 @media screen and (min-width: 2000px) {
   .concept ul li strong {
-    font-size: calc(15rem / 0.5);
+    font-size: calc(1rem / 0.5);
   }
 }
 .concept ul li:last-child {
