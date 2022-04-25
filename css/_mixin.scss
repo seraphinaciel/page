@@ -26,7 +26,11 @@ $minWide: 2000px;
 }
 
 @mixin fontSizeStyle($size, $weight) {
-  @if $size>=0.625rem and $size < 1.875rem{font-size:calc(#{$size} / 1);}
+  @if $size>=0.625rem and $size < 1.875rem{
+    font-size:calc(#{$size} / 1);
+    font-weight: #{$weight};  
+  }
+  
   @else{
     font-size:calc(#{$size} / 2);
     font-weight: #{$weight};  
@@ -44,7 +48,8 @@ $minWide: 2000px;
 
 @mixin bgColor($style, $rgb, $a) {
     @if $rgb == "cPoint" {#{$style} : rgba(255,203,0,$a);}
-    @else if $rgb == "cMain"{#{$style} : rgba(19,229,71,$a);}
+    @else if $rgb == "cMain"{#{$style} : rgba(4,207,92,$a);}
+    @else if $rgb == "cMainLight"{#{$style} : rgba(19,229,71,$a);}
+    @else if $rgb == "cMainDark"{#{$style} : rgba(19,161,81,$a);}
     @else if $rgb == "cSub"{#{$style} : rgba(28,204,228,$a);}
-    @else {#{$style} : rgba($rgb, $a);}
 }

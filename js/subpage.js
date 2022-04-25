@@ -20,7 +20,7 @@ const subTitle = [
 	'전라북도 농업기술원',
 	'익산시의회',
 	'고창군청',
-	'순창군청',
+	// '순창군청',
 	'전북도청',
 	'담양 대나무 축제',
 //	'전남지원청',
@@ -29,7 +29,7 @@ const subTitle = [
 //	'대구고등학교',
 //	'익산시 체육시설예약',
 	'비짓전주',
-	'임실군청',
+	// '임실군청',
 //	'군산대 학과'
 ]
 
@@ -62,9 +62,11 @@ console.log(localName)
 if (localName === 0) {
 	prevBtn.classList.add("disabled")
 	prevBtn.innerHTML = `<div><span>이전프로젝트 <strong>없습니다</strong></span></div>`;
-} else if (localName === 8) {
+	prevBtn.href='javascript:void(0);';
+} else if (localName === 6) {
 	nextBtn.classList.add("disabled")
 	nextBtn.innerHTML = `<div><span>다음프로젝트 <strong>없습니다</strong></span></div>`;
+	nextBtn.href='javascript:void(0);';
 }
 
 //indicator : click to prev&next button linked page

@@ -22,159 +22,107 @@
 			<h3><em>main design</em><em>publishing</em></h3>
 		</div>
 	</article>
-
 	<article class="concept">
-		<div class="swiper mySwiper">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide">
-					<h2>대표</h2>
-					<ul>
-						<li><strong>role</strong>메인 디자인&amp;퍼블리싱(html/css,javascript)</li>
-						<li><strong>date</strong>2019.6.12. ~ 6.21. (draft)<br>2019.8.22. ~ 11.5.<br>(open : 20.1.5.)</li>
-						<li><strong>type</strong>국문, 반응형 웹, 웹 접근성 마크 획득</li>
-						<li><strong>concept</strong>
-							<dl>
-								<dt>메인컨셉</dt>
-								<dd>전북도민들이 몇 년이 지나도 직관적으로 이용할 수 있는 홈페이지</dd>
-								<dt>컬러</dt>
-								<dd>채도가 낮은 기존의 컬러에서 차분한 회색을 기본컬러로, 전북의 첨단 신성장을 뜻하는 푸른색(메인컬러)과 전북의 고유한 전통문화를 상징하는 붉은색(포인트 컬러)을 활용하여 보다 깔끔하게 표현.</dd>
-								<dt>UI/UX</dt>
-								<dd>기존의 단순한 그리드에서 벗어나 불규칙적인 그리드를 활용하였습니다.</dd>
-								<dd>기존의 단순한 그리드를 깨고 비대칭을 활용한 레이아웃으로 열린 전북을 표현.</dd>
-								<dd>내비게이션 개선, 자주 쓰는 페이지 등 정보를 효과적으로 노출하고, 모든 디바이스에서 최적화된 반응형으로 사용자의 편의성과 접근성을 높였다.</dd>
-								<dd>넓은 화면, 논리적인 컨텐츠 구성, 심플하며 명확한 아이콘을 제공하여 사용자가 홈페이지를 더 쉽고 직관적으로 이용하기를 기대.</dd>
-							</dl>
-						</li>
-					</ul>
-					<p><a href="https://www.jeonbuk.go.kr/index.jeonbuk" target="_blank" title="새창으로 열기">web more</a></p>
-				</div>
-				<div class="swiper-slide">
-					<h2>도지사</h2>
-					<ul>
-						<li><strong>role</strong>퍼블리싱(html/css,javascript)&amp;콘텐츠 디자인</li>
-						<li><strong>date</strong>2019.9.3. ~ 11.5.</li>
-						<li><strong>type</strong></li>
-						<li><strong>concept</strong>
-							<dl>
-								<dt>메인컨셉</dt>
-								<dd>신뢰와 믿음을 주는 도지사실</dd>
-								<dt>컬러</dt>
-								<dd>짙푸른 남색을 사용하여 묵직하고 진중한 느낌을 나타내어 도지사에 대한 신뢰를 높였다.</dd>
-								<dt>UI/UX</dt>
-								<dd>약속, 소통, 실행이라는 세가지 주제를 바탕으로 콘텐츠 풀어나갔다.</dd>
-								<dd>도지사에게 바란다를 메인에 노출하여 도민과 도지사간의 소통을 강조하였다.</dd>
-							</dl>
-						</li>
-					</ul>
-					<p><a href="https://www.jeonbuk.go.kr/governor/index.jeonbuk" target="_blank" title="새창으로 열기">web more</a></p>
-				</div>
-			</div>
-			<div class="swiper-pagination"></div>
-		</div>
+		<ul>
+			<li><strong>role</strong>메인 디자인, 퍼블리싱(html/css/javascript)</li>
+			<li><strong>date</strong>2020.1.23. ~ 2.7. (draft)<br>2020.3.2. ~ 3.26.</li>
+			<li><strong>type</strong>국문, 담양군청 산하 기관, 반응형 웹, 축제 페이지</li>
+			<li><strong>concept</strong>
+				<dl>
+					<dt>메인컨셉</dt>
+					<dd>대나무 이미지를 전체 화면에 사용하여 대나무 숲에 들어온 듯한 느낌을 주었고, 대나무 축제의 정보를 한 번에 얻을 수 있도록 일정, 배치도, 행사프로그램, 자주찾는 질문을 버튼형식으로 넣었습니다. 전체적으로 탁 트여보이게 여백과 폰트, 이미지를 크게 사용하였습니다.</dd>
+					<dt>컬러</dt>
+					<dd>정적인 먹색을 기본으로 화려한 노랑색을 포인트 색으로 사용하였습니다.</dd>
+					<dt>UI/UX</dt>
+					<dd>축제소개/축제알아보기/오시는길/ 등 컨텐츠를 구분하여 세 번의 스크롤을 통해 사용자가 한 화면에서 내용을 쉽게 파악할 수 있도록 구성하였습니다. 또한 우측상단에 탭을 제공하여 주요 컨텐츠로의 이동이 용이하게 배치 하였습니다.</dd>
+				</dl>
+			</li>
+		</ul>
+		<p class="btn"><a href="http://www.bamboofestival.co.kr/index.do" target="_blank" title="새창으로 열기">web more</a></p>
 	</article>
-		
 	<article class="story">
 		<section class="codeBox">
 		<pre><code>
-const imageArr = document.querySelectorAll(".gallery_list img")
-<em>//사진을 모두 가져온다.</em>
-const titleArr = document.querySelectorAll(".gallery_list p strong");
-<em>//제목을 모두 가져온다.</em>
-const layerViewDiv = document.getElementById("layerView");
-const viewImgTag = document.getElementById("viewImg");
-const viewTitle = document.getElementById("layerTitle");
-let num = 1;
-function viewLayer(num) {
-<em>//해당 목록을 누르면 이벤트가 시작된다.</em>
-  viewTitle.innerHTML = titleArr[num].innerText;
-  <em>//num번째 제목을 모달의 제목에 붙여 넣는다.</em>
-  viewImgTag.src = imageArr[num].src;
-  <em>//num번째 사진을 모달의 사진에 붙여 넣는다.</em>
-  viewImgTag.alt = titleArr[num].innerText;
-  <em>//num번째 제목을 모달창에 대체텍스트로  붙여 넣는다.</em>
-  layerViewDiv.className = layerViewDiv.className.replace("hide", "");
-  <em>//모달에 hide 클래스를 추가하여 숨김 처리 한다.</em>
+const clockTitle = document.querySelector(".day");
+<em>//day 클래스를 찾아서 clockTitle이라는 변수에 넣는다</em>
+function clockTimer() {
+  const cDate = new Date();
+  <em>//날짜 찾기</em>
+  const dDay = new Date("april 25, 2023");
+  <em>//기준 날짜를 dDay에 넣는다.</em>
+  const reDay = (dDay - cDate) / 1000; 
+  <em>//기준 날짜 - 현재날짜
+  밀리초 단위의 숫자 값으로 반환(312,000 day)하므로 1000 나누기</em>
+  const oneHour = 60 * 60; 
+  <em>//1시간을 초로 환산</em>
+  const calDay = String(Math.floor(reDay / (oneHour * 24))).padStart(2, "0");
+  <em>//구해진 디데이 값을 Math.floor를 사용하여 소수값을 버리고 정수만 가져온다. 
+  padStart를 이용해 1~9까지를 01~09 두자리로 로 표출한다.</em>
+  clockTitle.innerText = `${calDay}`;
+  <em>//.day에 디데이 값 넣기</em>
 }
-function changeImg(plusNum) {
-  <em>//이전&다음 버튼을 누르면 실행된다</em>
-  num = parseInt(num + plusNum);
-  <em>//현재 num과 방금 실행된 버튼의 plusNum를 더하여 num에 숫자로 변환하여 넣는다</em>
-  if (num >= imageArr.length) num = 0;
-  <em>//num이 사진의 개수와 같거나 더 크다면 num을 0으로 초기화 한다.</em>
-  viewTitle.innerHTML = titleArr[num].innerText;
-  <em>//num번째 제목을 모달의 제목에 붙여 넣는다.</em>
-  viewImgTag.src = imageArr[num].src;
-  <em>//num번째 제목을 사진에 붙여 넣는다.</em>
-  viewImgTag.alt = titleArr[num].innerText;
-  <em>//num번째 제목을 대체텍스트로 붙여 넣는다.</em>
+clockTimer();
+
+let start = 1;
+<em>//시작하는 숫자 = 1</em>
+const day = clockTitle.innerText;
+<em>//clockTimer로 구한 값을 day에 넣는다.</em>
+const tId = setInterval(countUp, 15);
+<em>//countUp 호출, 0.015초 </em>
+function countUp() {
+  start = start + 1;
+  <em>//1부터 원하는 시간(day)까지 1씩 증가</em>
+  if (start == day) {
+    clearInterval(tId);
+    <em>//원하는 시간(day)에 도달하면 타이머가 멈춘다.</em>
+  }
+  clockTitle.innerText = start
+  <em>//1부터 원하는 시간(day)까지 휘리링 효과 시작</em>
 }
-function closeViewLayer() {layerViewDiv.className += " hide";}
-  <em>//닫기 버튼을 누르면 모달에 hide 클래스를 추가하여 숨김 처리 한다.</em>
 		</code></pre>
-		<div class="modalBox">
-			<ul class="gallery_list">
-				<li>
-					<a href="#layerView" onclick="viewLayer('0'); return false"><span><img src="https://www.jeonbuk.go.kr//upload_data/board_data/GALLERY_JEONBUK/thumbnail/163816051774120.png" alt="[2021 인권작품 공모전] 캘리그래피분야 아동·청소년부문"></span>
-					<p><strong>[2021 인권작품 공모전] 캘리그래피분야 아동·청소년부문</strong></p></a>
-				</li>
-				<li>
-					<a href="#layerView" onclick="viewLayer('1'); return false"><span><img src="https://www.jeonbuk.go.kr//upload_data/board_data/GALLERY_JEONBUK/thumbnail/160852822029688.jpg" alt="새만금 제5공구 내부용지"></span>
-					<p><strong>새만금 제5공구 내부용지</strong></p></a>
-				</li>
-				<li>
-					<a href="#layerView" onclick="viewLayer('2'); return false"><span><img src="https://www.jeonbuk.go.kr//upload_data/board_data/GALLERY_JEONBUK/thumbnail/160852818109304.jpg" alt="새만금 남북도로 일출"></span>
-					<p><strong>새만금 남북도로 일출</strong></p></a>
-				</li>
-			</ul>
-			<div class="gal_modal hide" id="layerView">
-				<strong id="layerTitle"></strong>
-				<div class="gal_box">
-					<div class="gal_imgbox mv_img"><img src="https://www.jeonbuk.go.kr/upload_data/board_data/GALLERY_JEONBUK/thumbnail/160852822029688.jpg" alt="" id="viewImg">
-						<p class="btn_set">
-							<a href="#" onclick="changeImg(-1);return false;" class="prev">이전사진보기</a><a href="#" onclick="changeImg(1);return false;" class="next">다음사진보기</a>
-						</p>
-					</div>
-					<p class="close_btnbox btn_set"><a href="#" onclick="closeViewLayer();return false;" class="close">닫기</a></p>
-				</div>
-			</div>
+
+		<div class="t_info">
+			<p class="v_date"><span class="d">D</span> - <span class="day"></span></p>
 		</div>
 		<script>
-			const imageArr = document.querySelectorAll(".gallery_list img")
-			const titleArr = document.querySelectorAll(".gallery_list p strong");
-			const layerViewDiv = document.getElementById("layerView");
-			const viewImgTag = document.getElementById("viewImg");
-			const viewTitle = document.getElementById("layerTitle");
-			let num = 1;
-			function viewLayer(num) {
-				viewTitle.innerHTML = titleArr[num].innerText;
-				viewImgTag.src = imageArr[num].src;
-				viewImgTag.alt = titleArr[num].innerText;
-				layerViewDiv.className = layerViewDiv.className.replace("hide", "");
-		//		$(".gal_box .btn_set .prev").focus();
+			const clockTitle = document.querySelector(".day");
+
+			function clockTimer() {
+				const cDate = new Date();
+				const dDay = new Date("april 25, 2023");
+				const reDay = (dDay - cDate) / 1000;
+				const oneHour = 60 * 60;
+				const calDay = String(Math.floor(reDay / (oneHour * 24))).padStart(2, "0");
+				clockTitle.innerText = `${calDay}`;
 			}
-			function changeImg(plusNum) {
-				num = parseInt(num + plusNum);
-				if (num >= imageArr.length) num = 0;
-				viewImgTag.src = imageArr[num].src;
-				viewImgTag.alt = titleArr[num].innerText;
-				viewTitle.innerHTML = titleArr[num].innerText;
+			clockTimer();
+			let start = 1;
+			const day = clockTitle.innerText;
+			const tId = setInterval(countUp, 15);
+
+			function countUp() {
+				start = start + 1;
+				if (start == day) {
+					clearInterval(tId);
+				}
+				clockTitle.innerText = start
 			}
-			function closeViewLayer() {layerViewDiv.className += " hide";}
 		</script>
-		<div class="storyTxt hide">
-			<h4>갤러리의 모달</h4>
-			갤러리의 게시물을 누르면 모들로 나온다. 게시판과 연동하는 거라 개발자가 작업했지만, 작업물을 보고 재해석하여 만들어 보았다.
+		<div class="storyTxt">
+			<h4>D-Day 구하기</h4>
+			축제이니 만큼 디데이가 중요해서 꼭 넣어야 했다. 숫자가 촤르륵 올라가는 효과를 주어 조금 더 생동감 있게 표현해 보았다.
 		</div>
 	</section>
 	</article>
-	
 	<article class="story">
-		<figure>
-			<span><img src="../images/content/img05-01.jpg" alt=""></span>
-			<span><img src="../images/content/img05-02.jpg" alt=""></span>
-			<figcaption><h4>전라북도청은 혼자 만들었다.</h4>
-			전라북도청, 군수실 등 시안부터 콘텐츠까지 어쩌다보니 거의 혼자 만들었다. 외국어를 제외하고 생생TV와 전자북은 다른 작업자가 메인만 만들어줬다. 모든 걸 끝내기 까지 3~4개월 정도 걸린 것 같다. 게시판 만드는게 일이었는데, 어디에 붙여도 어우러지도록 되도록 간단하게 작업을 하였다.
-			<p class="btn"><a href="../images/content/img05-01.jpg" title="새창열림" target="_blank">PC 시안 자세히보기</a><a href="../images/content/img05-02.jpg" title="새창열림" target="_blank">mobile 시안 자세히보기</a></p></figcaption>
+		<figure class="colBox-6">
+			<span><img src="../images/content/img06-01.jpg" alt=""></span>
+			<span><img src="../images/content/img06-02.jpg" alt=""></span>
+			<figcaption>
+				<h4>더 크게 더 멋지게</h4>축제에 걸맞게 전체 화면을 사용하는데 중점을 주었다. 아리따움 폰트로 대나무를 형상화하였다. 
+				<br>아쉬운점은 그다지 많은 스크립트가 들어가는 사이트가 아니어서... 간단한 축제 사이트에다 코로나 때문에 오픈도 제대로 못해서 너무 아쉬웠다.
+				<p class="btn"><a href="../images/content/img06-01.jpg" title="새창열림" target="_blank">PC 시안 자세히보기</a><a href="../images/content/img06-02.jpg" title="새창열림" target="_blank">mobile 시안 자세히보기</a></p>
+			</figcaption>
 		</figure>
 	</article>
 </main>

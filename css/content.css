@@ -222,15 +222,15 @@
 /*page12	'익산시 체육시설예약'*/
 
 /*page13	'비짓전주'*/
-.spotSlide{padding-top: 3rem;margin:auto;position: relative;overflow: hidden}
+.spotSlide{padding-top: 3rem;margin:auto;position: relative;overflow: hidden;width: 100vw;}
 .spotSlide .btn_circle{width:100%;display:flex;flex-wrap: wrap}
 .spotSlide .btn_circle button{padding:.5rem 1rem; background: powderblue;overflow:hidden;display: block;z-index:1}
 .spotSlide  .prev{top:0;right:70px;}
 .spotSlide  .next{top:0;}
 .spotSlide  .disable{opacity:.3}
 .spotSlide  button:hover,.spotSlide  button:focus{background-color:#efe9f3}
-.item_wrap{display:flex;}
-.item_wrap span{flex: 0 0 calc(100vw / 3)}
+.item_wrap{display:flex;/* flex-wrap: wrap; */width: 100%;}
+.item_wrap span{flex: 0 0 auto;width: 33.33%;}
 .item_wrap img{max-width: 100%}
 .item_wrap strong{text-align: center}
 @media all and (min-width:1280px){.spotSlide{width:1280px;}}

@@ -10,6 +10,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="../css/import.css" rel="stylesheet" type="text/css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <body>
 <div data-include-path="../gnb.html"></div>
@@ -24,107 +26,156 @@
 	</article>
 	<article class="concept">
 		<ul>
-			<li><strong>role</strong></li>
-			<li><strong>date</strong>2020.1.23. ~ 2.7. (draft)<br>2020.3.2. ~ 3.26.</li>
-			<li><strong>type</strong></li>
-			<li><strong>concept</strong>
-				<dl>
-					<dt>메인컨셉</dt>
-					<dd>대나무 이미지를 전체 화면에 사용하여 대나무 숲에 들어온 듯한 느낌을 주었고, 대나무 축제의 정보를 한 번에 얻을 수 있도록 일정, 배치도, 행사프로그램, 자주찾는 질문을 버튼형식으로 넣었습니다. 전체적으로 탁 트여보이게 여백과 폰트, 이미지를 크게 사용하였습니다.</dd>
-					<dt>컬러</dt>
-					<dd>정적인 먹색을 기본으로 화려한 노랑색을 포인트 색으로 사용하였습니다.</dd>
-					<dt>UI/UX</dt>
-					<dd>축제소개/축제알아보기/오시는길/ 등 컨텐츠를 구분하여 세 번의 스크롤을 통해 사용자가 한 화면에서 내용을 쉽게 파악할 수 있도록 구성하였습니다. 또한 우측상단에 탭을 제공하여 주요 컨텐츠로의 이동이 용이하게 배치 하였습니다.</dd>
-				</dl>
-			</li>
+			<li><strong>role</strong>메인 디자인, 퍼블리싱(html/css/javascript)</li>
+			<li><strong>date</strong>2020.11.2. ~ 22.4.30.</li>
+			<li><strong>type</strong>국문, 외국어(영중일스프), 관광거점도시 홍보형, 전주시 문화관광</li>
+			<li><strong>note</strong>전주가 방한 도시관광의 선도모델 육성을 위한 관광거점도시로 선정되어 만든 반응형 웹</li>
 		</ul>
-		<p><a href="http://www.bamboofestival.co.kr/index.do" target="_blank" title="새창으로 열기">web more</a></p>
+		<p class="btn" class="btn"><a href="" target="_blank" title="새창으로 열기">web more</a></p>
 	</article>
 	<article class="story">
 		<section class="codeBox">
-		<pre><code>
-const clockTitle = document.querySelector(".day");
-<em>//day 클래스를 찾아서 clockTitle이라는 변수에 넣는다</em>
-function clockTimer() {
-  const cDate = new Date();
-  <em>//날짜 찾기</em>
-  const dDay = new Date("april 25, 2023");
-  <em>//기준 날짜를 dDay에 넣는다.</em>
-  const reDay = (dDay - cDate) / 1000; 
-  <em>//기준 날짜 - 현재날짜
-  밀리초 단위의 숫자 값으로 반환(312,000 day)하므로 1000 나누기</em>
-  const oneHour = 60 * 60; 
-  <em>//1시간을 초로 환산</em>
-  const calDay = String(Math.floor(reDay / (oneHour * 24))).padStart(2, "0");
-  <em>//구해진 디데이 값을 Math.floor를 사용하여 소수값을 버리고 정수만 가져온다. 
-  padStart를 이용해 1~9까지를 01~09 두자리로 로 표출한다.</em>
-  clockTitle.innerText = `${calDay}`;
-  <em>//.day에 디데이 값 넣기</em>
-}
-clockTimer();
+			<pre><code>
+$(document).ready(function(){
+  let move = 0;
+  <em>//게시물이 이동되는 값을 초기화!</em>
+  const elements = $(".item_wrap > span");
+  const moveAdd = (window.innerWidth / 3);
+  <em>//디바이스 너비 / 3</em>
+  const length = $(elements).length;
+  <em>//총 게시물 개수</em>
+  $(".btn_circle .prev").bind("click",function(){
+  <em>//prev 버튼을 클릭하면 아래의 이벤트가 발생된다.</em>
+  	if($(this).hasClass("disable"))return false;
+  	<em>//disable이 있다면 여기에서 멈춘다(이전 게시물이 없으므로 이벤트가 진행되지 않는다).</em>
+  	$(".btn_circle .next").removeClass("disable"); 
+  	<em>//next버튼을 클릭하면 현재 prev버튼에서 disable제거(이벤트 시작)</em>
+  	$(elements).filter(".on").removeClass("on").prev("span").addClass("on");
+  	<em>//현재 게시물에서 .on을 제거하고, 다음 게시물에 .on을 추가한다.</em>
+  	if($(elements).index($(elements).filter(".on")) == 0){
+  	<em>//이전 게시물이 없을 때 </em>
+  		$(".btn_circle .prev").addClass("disable");
+  		<em>//disable 추가</em>
+  	}
+  	move += moveAdd;
+  	<em>//버튼을 누를 때마다 1칸의 너비만큼 값이 더해진다.</em>
+  	$(".item_wrap").css("transform","translateX("+move+"px)");
+  	<em>//버튼을 누를 때마다 transform을 이용해 1칸의 너비만큼 이동된다.</em>
+  });
+  
+  $(".btn_circle .next").bind("click",function(){
+  	if($(this).hasClass("disable"))return false;
+  	$(".btn_circle .prev").removeClass("disable");
+  	$(elements).filter(".on").removeClass("on").next("span").addClass("on");
+  	if($(elements).index($(elements).filter(".on")) == (length-2)){
+  		$(".btn_circle .next").addClass("disable");
+  	} 
+  	move -= moveAdd;
+  	$(".item_wrap").css("transform","translateX("+move+"px)");
+  });
+})
+			</code></pre>
 
-let start = 1;
-<em>//시작하는 숫자 = 1</em>
-const day = clockTitle.innerText;
-<em>//clockTimer로 구한 값을 day에 넣는다.</em>
-const tId = setInterval(countUp, 15);
-<em>//countUp 호출, 0.015초 </em>
-function countUp() {
-  start = start + 1;
-  <em>//1부터 원하는 시간(day)까지 1씩 증가</em>
-  if (start == day) {
-    clearInterval(tId);
-    <em>//원하는 시간(day)에 도달하면 타이머가 멈춘다.</em>
-  }
-  clockTitle.innerText = start
-  <em>//1부터 원하는 시간(day)까지 휘리링 효과 시작</em>
-}
-		</code></pre>
+			<div class="spotSlide">
+				<p class="btn_circle"><button class="prev disable">prev</button><button class="next">next</button></p>
+				<div class="item_wrap" style="transition: all 0.5s ease-out 0s; transform: translateX(0px);">
+					<span class="on">
+						<img src="http://jeonju-tour.skoinfo.co.kr//images/contents/new04/arttownSlide01.jpg" alt="">
+						<strong>골목갤러리</strong>
+					</span>
+					<span class="">
+						<img src="http://jeonju-tour.skoinfo.co.kr//images/contents/new04/arttownSlide02.jpg" alt="">
+						<strong>서학동 사진관</strong>
+					</span>
+					<span class="">
+						<img src="http://jeonju-tour.skoinfo.co.kr//images/contents/new04/arttownSlide03.jpg" alt="">
+						<strong>선재미술관</strong>
+					</span>
+					<span class="">
+						<img src="http://jeonju-tour.skoinfo.co.kr//images/contents/new04/arttownSlide04.jpg" alt="">
+						<strong>예술공방촌</strong>
+					</span>
+					<span class="">
+						<img src="http://jeonju-tour.skoinfo.co.kr//images/contents/new04/arttownSlide05.jpg" alt="">
+						<strong>벽화아트</strong>
+					</span>
+					<span class="">
+						<img src="http://jeonju-tour.skoinfo.co.kr//images/contents/new04/arttownSlide06.jpg" alt="">
+						<strong>마당음악회</strong>
+					</span>
+					<span class="">
+						<img src="http://jeonju-tour.skoinfo.co.kr//images/contents/new04/arttownSlide07.jpg" alt="">
+						<strong>야호 아이놀자</strong>
+					</span>
+					<span class="">
+						<img src="http://jeonju-tour.skoinfo.co.kr//images/contents/new04/arttownSlide08.jpg" alt="">
+						<strong>예술학교</strong>
+					</span>
+					<span class="">
+						<img src="http://jeonju-tour.skoinfo.co.kr//images/contents/new04/arttownSlide09.jpg" alt="">
+						<strong>희망 도시락 편지</strong>
+					</span>
+					<span class="">
+						<img src="http://jeonju-tour.skoinfo.co.kr//images/contents/new04/arttownSlide10.jpg" alt="">
+						<strong>할매공방 패션쇼</strong>
+					</span>
+					<span class="">
+						<img src="http://jeonju-tour.skoinfo.co.kr//images/contents/new04/arttownSlide11.jpg" alt="">
+						<strong>마스크 제작 기부</strong>
+					</span>
+				</div>
+			</div>
+			<script>
+				$(document).ready(function() {
+					let move = 0;
+					const elements = $(".item_wrap > span");
+					const moveAdd = window.innerWidth / 3;
+					const length = $(elements).length;
+					$(".btn_circle .prev").bind("click", function() {
+						if ($(this).hasClass("disable")) return false;
+						$(".btn_circle .next").removeClass("disable");
+						$(elements).filter(".on").removeClass("on").prev("span").addClass("on");
+						if ($(elements).index($(elements).filter(".on")) == 0) {
+							$(".btn_circle .prev").addClass("disable");
+						}
+						move += moveAdd;
+						$(".item_wrap").css("transform", "translateX(" + move + "px)");
+					});
 
-		<div class="t_info">
-			<p class="v_date"><span class="d">D</span> - <span class="day"></span></p>
-		</div>
-		<script>
-			const clockTitle = document.querySelector(".day");
+					$(".btn_circle .next").bind("click", function() {
+						if ($(this).hasClass("disable")) return false;
+						$(".btn_circle .prev").removeClass("disable");
+						$(elements).filter(".on").removeClass("on").next("span").addClass("on");
+						if ($(elements).index($(elements).filter(".on")) == (length - 2)) {
+							$(".btn_circle .next").addClass("disable");
+						}
+						move -= moveAdd;
+						$(".item_wrap").css("transform", "translateX(" + move + "px)");
+					});
+				})
+			</script>
 
-			function clockTimer() {
-				const cDate = new Date();
-				const dDay = new Date("april 25, 2023");
-				const reDay = (dDay - cDate) / 1000;
-				const oneHour = 60 * 60;
-				const calDay = String(Math.floor(reDay / (oneHour * 24))).padStart(2, "0");
-				clockTitle.innerText = `${calDay}`;
-			}
-			clockTimer();
-			let start = 1;
-			const day = clockTitle.innerText;
-			const tId = setInterval(countUp, 15);
-
-			function countUp() {
-				start = start + 1;
-				if (start == day) {
-					clearInterval(tId);
-				}
-				clockTitle.innerText = start
-			}
-		</script>
-		<div class="storyTxt">
-			<h4>D-Day 구하기</h4>
-			축제이니 만큼 디데이가 중요해서 꼭 넣어야 했다. 숫자가 촤르륵 올라가는 효과를 주어 조금 더 생동감 있게 표현해 보았다.
-		</div>
-	</section>
+			<div class="storyTxt">
+				<h4>반응형 슬라이드</h4>
+				디바이스 크기에 따라 3칸으로 표출되고, 버튼을 누를때마다 1칸의 크기만큼 이동이 가능하다.
+				게시물이 없을 시 <kbd>button</kbd>에 <kbd>.disable</kbd>이 추가되어 이동이 불가능하다.<br>
+				<strong>보완점</strong>: 디바이스가 변할 때마다 새로고침을 해야 하는 번거로움이 있어 보완해야 한다.
+			</div>
+		</section>
 	</article>
-	<article class="story">
-		<figure class="colBox-6">
-			<span><img src="../images/content/img06-01.jpg" alt=""></span>
-			<span><img src="../images/content/img06-02.jpg" alt=""></span>
+	<article class="story">		
+		<figure class="colBox-1">
+			<span><img src="../images/content/img07-01.jpg" alt=""></span>
 			<figcaption>
-				<h4>더 크게 더 멋지게</h4>축제에 걸맞게 전체 화면을 사용하는데 중점을 주었다. 아리따움 폰트로 대나무를 형상화하였다. 
-				<br>아쉬운점은 그다지 많은 스크립트가 들어가는 사이트가 아니어서... 간단한 축제 사이트에다 코로나 때문에 오픈도 제대로 못해서 너무 아쉬웠다.
-				<p class="btn"><a href="../images/content/img06-01.jpg" title="새창열림" target="_blank">PC 시안 자세히보기</a><a href="../images/content/img06-02.jpg" title="새창열림" target="_blank">mobile 시안 자세히보기</a></p>
+				<h4>최종 메인 시안</h4>
+				<strong>1차 작업</strong> : 한옥마을 등 외국인 관광객들이 체감할 수 있는 전통문화 브랜드가 가장 확고한 도시라는 이유로 선정되었다. 이에 전주 한옥마을을 모티브로 아이콘도 그려보고, 처음 시도해보는 일러스트로 구성한 디자인이라 재미있었다.<br>
+				<strong>2차 작업</strong> : 요청사항 및 콘텐츠 기획, 담당자들의 잦은 교체와 중간에 거의 완성된 작업을 새로 해야 해서 어려웠다. 이걸 기회로 삼아 디자인 기획부터 앞으로 나아갈 방향에 대해 생각하는 시간을 가졌다. 개인적으로 비짓전주를 하면서 안팎으로 매우 성장했다고 생각한다.<br>
+				<strong>외국어</strong> : 외국인의 눈으로 볼 때 와닿을 수 있도록 폰트, 배치, 외국어 특화 메뉴에 신경을 많이 썼다. 5개 국어 글자 수가 가변적으로 변해도 무리가 없는 코딩을 하려고 노력했다.
+				<p class="btn"><a href="../images/content/img07-01.jpg" title="새창열림" target="_blank">PC 시안 자세히보기</a></p>
 			</figcaption>
 		</figure>
 	</article>
+
 </main>
 
 <aside></aside>
@@ -133,7 +184,6 @@ function countUp() {
 
 <a href="javascript:void(0);" class="btnTop">Top</a>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="../js/swiperMouse.js"></script>
 <script src="../js/include.js"></script>
