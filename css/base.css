@@ -30,33 +30,3 @@ hr{visibility:hidden;overflow:hidden;position:absolute;width:0;height:0;font-siz
 
 ::selection {background:#ffcb00;text-shadow:none;}
 
-
-/* :root {
-  --text-multiplier: 2;
-  --text-multiplier-02: 1;
-  --fs-thin:calc(.625rem / var(--text-multiplier-02));
-  --fs-light:calc(.875rem / var(--text-multiplier-02));
-  --fs-regular:calc(1rem / var(--text-multiplier-02));
-  --fs-medium:calc(1.125rem / var(--text-multiplier-02));
-  --fs-bold:calc(1.875rem / var(--text-multiplier-02));
-  --fs-black:calc(2rem / var(--text-multiplier));
-  --fs-heavy:calc(4rem / var(--text-multiplier));
-}
-
-@media (min-width: 700px) {
-  :root {
-    --text-multiplier: 1.5;
-  }
-}
-
-@media (min-width: 1000px) {
-  :root {
-    --text-multiplier: 1;
-  }
-}
-@media (min-width: 2000px) {
-  :root {
-    --text-multiplier: 0.5;
-    --text-multiplier-02: 0.5;
-  }
-} */
