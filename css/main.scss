@@ -6,9 +6,8 @@
     h2{color:white;@include fontSizeStyle(4.4375rem, 100);text-transform: capitalize;
         strong{font-weight: 500;display:block}
     }
-	p{font-weight: 500;font-size: .875rem;
-        // @include fontSizeStyle(0.625rem, 500);
-        color: white;padding-top: .625rem;
+	p{font-weight: 500;font-size: .875rem;// @include fontSizeStyle(0.625rem, 500);
+      color: white;padding-top: .625rem;
         span{display:inline-block;padding-right:1em;text-transform: uppercase;
             &::before{content:"#"}
         }
@@ -79,6 +78,7 @@
         }
     }
 }
+
 @keyframes slide-right{0%{transform:translateX(0)}50%{transform:translateX(10px)}}
 
 .projectList figure{
