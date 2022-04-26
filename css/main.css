@@ -575,8 +575,8 @@ header h1 {
               transform: translateX(0);
     }
     to {
-      -webkit-transform: translateX(calc(-250px * 6));
-              transform: translateX(calc(-250px * 6));
+      -webkit-transform: translateX(calc(-250px * 8));
+              transform: translateX(calc(-250px * 8));
     }
   }
   @keyframes moving {
@@ -585,8 +585,8 @@ header h1 {
               transform: translateX(0);
     }
     to {
-      -webkit-transform: translateX(calc(-250px * 6));
-              transform: translateX(calc(-250px * 6));
+      -webkit-transform: translateX(calc(-250px * 8));
+              transform: translateX(calc(-250px * 8));
     }
   }
 }

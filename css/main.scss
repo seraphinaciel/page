@@ -139,6 +139,6 @@ header{width:100%;height:90px;display: flex;justify-content: center;align-conten
     }
     @keyframes moving{
         from{transform: translateX(0)} 
-        to{transform: translateX(calc(-250px * 6))}
+        to{transform: translateX(calc(-250px * 8))}
     }
 }
