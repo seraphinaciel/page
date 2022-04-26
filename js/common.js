@@ -26,17 +26,7 @@ $(document).ready(function($){
 
 
 
-//main → project load more button
-$(document).ready(function() { 
-	$(".projectList figure").slice(0, 4).show();
-	$(".btn_readMore").on("click", function(e) {
-		e.preventDefault();
-		$(".projectList figure:hidden").slice(0, 4).slideDown();
-		if ($(".projectList figure:hidden").length == 0) {
-			$(".btn_readMore").text("No Content").addClass("noContent");
-		}
-	});
-})
+
 
 
 

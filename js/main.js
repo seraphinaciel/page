@@ -10,7 +10,7 @@ graph.forEach((g, k) => {
     }, 10)
 });
 
-//project list
+//project → list
 const projectList = document.querySelector(".projectList");
 const projectName = [
     {title: '장수군 승마레저파크',type: '개편 사업'},
@@ -49,34 +49,35 @@ for (let num = 0; num < projectName.length; num++) {
 `;
 }
 
+//project → load more button
+$(document).ready(function() { 
+	$(".projectList figure").slice(0, 4).show();
+	$(".btn_readMore").on("click", function(e) {
+		e.preventDefault();
+		$(".projectList figure:hidden").slice(0, 4).slideDown();
+		if ($(".projectList figure:hidden").length == 0) {
+			$(".btn_readMore").text("").addClass("noContent");
+		}
+	});
+})
+
+//banner slider
 function Slider(target) {
-    // 상태
     let index = 1;
     let isMoved = true;
     const speed = 1000; // ms
-
-    // 슬라이더
     const slider = document.querySelector(".slider");
-
-    // 슬라이더 화면 컨테이너
     const container = document.createElement("div");
     container.classList.add("container");
-
-    // 슬라이더 화면 목록
     let boxes = [].slice.call(slider.children);
     boxes = [].concat(boxes, boxes, boxes[0]); //박스 배열에 박스, 복사된박스, 첫번째 박스를 합친다.
-
-    // 슬라이더 화면 스타일
     const size = boxes.length;
     for (let i = 0; i < size; i++) {
         const box = boxes[i];
         container.appendChild(box.cloneNode(true));
     }
-
-    // 슬라이더 붙이기
     slider.innerHTML = "";
     slider.appendChild(container);
     return {};
 }
-
 const s1 = new Slider("#slider");

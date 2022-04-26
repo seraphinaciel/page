@@ -58,6 +58,8 @@ footer .fnb a {
   text-transform: uppercase;
   position: relative;
   overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 footer .fnb a:before {
@@ -74,15 +76,15 @@ footer .fnb a:before {
 }
 
 footer .fnb a address {
-  font-size: calc(0.875rem / 1);
   font-weight: 400;
+  font-size: calc(0.875rem / 1);
   position: relative;
   z-index: 1;
 }
 
-@media screen and (min-width: 2000px) {
+@media all and (min-width: 2000px) {
   footer .fnb a address {
-    font-size: calc(0.875rem / 0.5);
+    font-size: calc(0.875rem / 0.7);
   }
 }
 
@@ -114,14 +116,14 @@ footer .fnb a:hover svg {
 }
 
 footer .fnb i {
-  font-size: calc(1.375rem / 1);
   font-weight: 400;
+  font-size: calc(1.375rem / 1);
   margin-right: .625rem;
 }
 
-@media screen and (min-width: 2000px) {
+@media all and (min-width: 2000px) {
   footer .fnb i {
-    font-size: calc(1.375rem / 0.5);
+    font-size: calc(1.375rem / 0.7);
   }
 }
 
@@ -136,21 +138,25 @@ footer .copy {
   width: 100%;
   text-transform: capitalize;
   margin-top: 1rem;
-  font-size: calc(1rem / 1);
   font-weight: 400;
+  font-size: calc(1rem / 1);
   text-align: center;
   letter-spacing: 0;
 }
 
-@media screen and (min-width: 2000px) {
+@media all and (min-width: 2000px) {
   footer .copy {
-    font-size: calc(1rem / 0.5);
+    font-size: calc(1rem / 0.7);
   }
 }
 
 @media all and (min-width: 1000px) {
   footer {
     padding: 0 15vw;
+  }
+  footer .fnb a[class^="git"] i {
+    width: 1.25vw;
+    height: 1.25vw;
   }
   footer .copy {
     width: auto;
@@ -166,8 +172,8 @@ footer .copy {
   z-index: 9;
   width: 40px;
   height: 40px;
-  font-size: calc(0.875rem / 1);
   font-weight: 400;
+  font-size: calc(0.875rem / 1);
   text-align: center;
   line-height: 3;
   letter-spacing: 1px;
@@ -182,9 +188,9 @@ footer .copy {
   text-transform: uppercase;
 }
 
-@media screen and (min-width: 2000px) {
+@media all and (min-width: 2000px) {
   .btnTop {
-    font-size: calc(0.875rem / 0.5);
+    font-size: calc(0.875rem / 0.7);
   }
 }
 
@@ -218,8 +224,8 @@ footer .copy {
 }
 
 .sub_visual h2 {
-  font-size: calc(4rem / 2);
   font-weight: 500;
+  font-size: calc(4rem / 2);
   color: white;
   text-transform: capitalize;
   letter-spacing: 1px;
@@ -238,15 +244,15 @@ footer .copy {
   }
 }
 
-@media screen and (min-width: 2000px) {
+@media all and (min-width: 2000px) {
   .sub_visual h2 {
-    font-size: calc(4rem / 0.5);
+    font-size: calc(4rem / 0.7);
   }
 }
 
 .sub_visual h3 {
-  font-size: calc(2rem / 2);
   font-weight: 600;
+  font-size: calc(2rem / 2);
   color: white;
   text-align: right;
   width: 100%;
@@ -264,9 +270,9 @@ footer .copy {
   }
 }
 
-@media screen and (min-width: 2000px) {
+@media all and (min-width: 2000px) {
   .sub_visual h3 {
-    font-size: calc(2rem / 0.5);
+    font-size: calc(2rem / 0.7);
   }
 }
 
@@ -350,8 +356,8 @@ footer .copy {
     padding: 4vw 16vw;
   }
   .sub_visual h2 {
-    font-size: calc(4rem / 2);
     font-weight: 600;
+    font-size: calc(4rem / 2);
   }
 }
 
@@ -364,6 +370,12 @@ footer .copy {
 @media all and (min-width: 600px) and (min-width: 1000px) {
   .sub_visual h2 {
     font-size: calc(4rem / 1);
+  }
+}
+
+@media all and (min-width: 600px) and (min-width: 2000px) {
+  .sub_visual h2 {
+    font-size: calc(4rem / 0.7);
   }
 }
 
@@ -384,14 +396,14 @@ footer .copy {
   color: white;
   padding: .875rem 4em;
   text-transform: uppercase;
-  font-size: calc(0.875rem / 1);
   font-weight: 400;
+  font-size: calc(0.875rem / 1);
   letter-spacing: 0;
 }
 
-@media screen and (min-width: 2000px) {
+@media all and (min-width: 2000px) {
   .btn a {
-    font-size: calc(0.875rem / 0.5);
+    font-size: calc(0.875rem / 0.7);
   }
 }
 
@@ -413,8 +425,8 @@ footer .copy {
 }
 
 .concept h3 {
-  font-size: calc(2.25rem / 2);
   font-weight: 600;
+  font-size: calc(2.25rem / 2);
   width: 100%;
   margin-bottom: 1rem;
 }
@@ -431,9 +443,9 @@ footer .copy {
   }
 }
 
-@media screen and (min-width: 2000px) {
+@media all and (min-width: 2000px) {
   .concept h3 {
-    font-size: calc(2.25rem / 0.5);
+    font-size: calc(2.25rem / 0.7);
   }
 }
 
@@ -450,27 +462,27 @@ footer .copy {
   width: 100%;
   padding: 0 1rem 1rem 0;
   text-transform: capitalize;
-  font-size: calc(0.875rem / 1);
   font-weight: 400;
+  font-size: calc(0.875rem / 1);
   line-height: 2.8;
 }
 
-@media screen and (min-width: 2000px) {
+@media all and (min-width: 2000px) {
   .concept ul li {
-    font-size: calc(0.875rem / 0.5);
+    font-size: calc(0.875rem / 0.7);
   }
 }
 
 .concept ul li strong {
-  font-size: calc(1rem / 1);
   font-weight: 900;
+  font-size: calc(1rem / 1);
   letter-spacing: 0;
   display: block;
 }
 
-@media screen and (min-width: 2000px) {
+@media all and (min-width: 2000px) {
   .concept ul li strong {
-    font-size: calc(1rem / 0.5);
+    font-size: calc(1rem / 0.7);
   }
 }
 
@@ -621,26 +633,26 @@ footer .copy {
   width: 100%;
   padding: 6vw 10vw;
   margin: auto;
-  font-size: calc(1rem / 1);
   font-weight: 400;
+  font-size: calc(1rem / 1);
   line-height: 2.2;
   text-align: left;
 }
 
-@media screen and (min-width: 2000px) {
+@media all and (min-width: 2000px) {
   .story figure figcaption {
-    font-size: calc(1rem / 0.5);
+    font-size: calc(1rem / 0.7);
   }
 }
 
 .story figure figcaption h4 {
-  font-size: calc(1.125rem / 1);
   font-weight: 900;
+  font-size: calc(1.125rem / 1);
 }
 
-@media screen and (min-width: 2000px) {
+@media all and (min-width: 2000px) {
   .story figure figcaption h4 {
-    font-size: calc(1.125rem / 0.5);
+    font-size: calc(1.125rem / 0.7);
   }
 }
 
@@ -670,16 +682,16 @@ footer .copy {
 
 .codeBox pre code {
   width: 100%;
-  font-size: calc(1rem / 1);
   font-weight: 400;
+  font-size: calc(1rem / 1);
   line-height: 1.6;
   display: block;
   white-space: pre-wrap;
 }
 
-@media screen and (min-width: 2000px) {
+@media all and (min-width: 2000px) {
   .codeBox pre code {
-    font-size: calc(1rem / 0.5);
+    font-size: calc(1rem / 0.7);
   }
 }
 
@@ -690,27 +702,27 @@ footer .copy {
 .codeBox .storyTxt {
   padding: 6vw 8vw;
   margin: auto;
-  font-size: calc(1rem / 1);
   font-weight: 400;
+  font-size: calc(1rem / 1);
   color: #464646;
 }
 
-@media screen and (min-width: 2000px) {
+@media all and (min-width: 2000px) {
   .codeBox .storyTxt {
-    font-size: calc(1rem / 0.5);
+    font-size: calc(1rem / 0.7);
   }
 }
 
 .codeBox .storyTxt h4 {
-  font-size: calc(1.125rem / 1);
   font-weight: 900;
+  font-size: calc(1.125rem / 1);
   color: #222;
   padding: 1rem 0;
 }
 
-@media screen and (min-width: 2000px) {
+@media all and (min-width: 2000px) {
   .codeBox .storyTxt h4 {
-    font-size: calc(1.125rem / 0.5);
+    font-size: calc(1.125rem / 0.7);
   }
 }
 
@@ -822,13 +834,13 @@ aside a span {
       -ms-flex-pack: center;
           justify-content: center;
   letter-spacing: 0;
-  font-size: calc(0.875rem / 1);
   font-weight: 400;
+  font-size: calc(0.875rem / 1);
 }
 
-@media screen and (min-width: 2000px) {
+@media all and (min-width: 2000px) {
   aside a span {
-    font-size: calc(0.875rem / 0.5);
+    font-size: calc(0.875rem / 0.7);
   }
 }
 
@@ -867,29 +879,29 @@ aside a.list {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 5px;
-  font-size: calc(0.625rem / 1);
   font-weight: 400;
+  font-size: calc(0.625rem / 1);
   font-weight: 900;
   -webkit-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
 }
 
-@media screen and (min-width: 2000px) {
+@media all and (min-width: 2000px) {
   aside a.list {
-    font-size: calc(0.625rem / 0.5);
+    font-size: calc(0.625rem / 0.7);
   }
 }
 
 aside a.list i {
-  font-size: calc(1rem / 1);
   font-weight: 400;
+  font-size: calc(1rem / 1);
   padding-bottom: 6px;
   display: block;
 }
 
-@media screen and (min-width: 2000px) {
+@media all and (min-width: 2000px) {
   aside a.list i {
-    font-size: calc(1rem / 0.5);
+    font-size: calc(1rem / 0.7);
   }
 }
 
@@ -930,8 +942,8 @@ aside a.disabled:hover, aside a.disabled:hover div, aside a.disabled:hover stron
     padding: 0 5vw;
   }
   aside a i {
-    font-size: calc(2rem / 2);
     font-weight: 400;
+    font-size: calc(2rem / 2);
   }
 }
 
@@ -947,6 +959,12 @@ aside a.disabled:hover, aside a.disabled:hover div, aside a.disabled:hover stron
   }
 }
 
+@media all and (min-width: 500px) and (min-width: 2000px) {
+  aside a i {
+    font-size: calc(2rem / 0.7);
+  }
+}
+
 @media all and (min-width: 500px) {
   aside a span {
     padding: 0 20px;
@@ -955,10 +973,19 @@ aside a.disabled:hover, aside a.disabled:hover div, aside a.disabled:hover stron
   aside a span strong {
     display: block;
     letter-spacing: 0;
-    font-size: calc(1.125rem / 1);
     font-weight: 400;
+    font-size: calc(1.125rem / 1);
     font-weight: 600;
   }
+}
+
+@media all and (min-width: 500px) and (min-width: 2000px) {
+  aside a span strong {
+    font-size: calc(1.125rem / 0.7);
+  }
+}
+
+@media all and (min-width: 500px) {
   aside a.list {
     width: 90px;
     line-height: 90px;
