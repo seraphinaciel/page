@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+html {scroll-behavior: smooth;}
 body{min-width:375px;font-size:100%;margin:0;padding:0;font-family:'NotoSans', '노토산스', Arial, sans-serif;color:#000;font-weight:400;letter-spacing:-.05em;word-break: keep-all}
 
 body, button, caption, div, dl, dt, dd, form, fieldset, figcaption, figure, footer, header, h1, h2, h3, h4, h5, h6, img, iframe, input, ul, ol, li, p, section, span, table, td, th, tr{margin:0;padding:0;border:none;-webkit-box-sizing:border-box;box-sizing:border-box;}
