@@ -150,7 +150,7 @@ footer .copy {
   }
 }
 
-@media all and (min-width: 1000px) {
+@media all and (min-width: 1300px) {
   footer {
     padding: 0 15vw;
   }
