@@ -1,7 +1,6 @@
 @charset "utf-8";
 
 /*page00	'장수군 승마레저파크'*/
-.faq{}
 .faq .accordion{background-color:#f5f5f5;cursor:pointer;padding:15px 20px;width:100%;border:1px solid rgba(0,0,0,0);text-align:left;outline:none;font-size:16px;transition:.4s;}
 .faq .accordion.active,.faq .accordion:hover{border:1px solid;font-weight:bold;}
 .faq .accordion:after{content:'\002B';color:#777;font-weight:bold;float:right;margin-left:5px;}
@@ -20,7 +19,7 @@
 .specialty strong{display:block;padding:10px 0;background: #666;color:#fff}
 .specialty .on{background:url(https://www.jbares.go.kr//images/sub/sub05/s5_on.gif) no-repeat top center;z-index:1;}
 .specialty .on span{border-color: #ef5f4b;}
-.specialty .on strong{background:#ef5f4b;background:#666, consolid:#fff}
+.specialty .on strong{background:#ef5f4b;background:#666;}
 @media all and (min-width:768px){
 .specialty{margin:0 auto;overflow-x:auto;height: 700px;}
 .specialty>img{max-width: inherit; display: block;}
@@ -56,7 +55,6 @@
 .introduce_org .org1>ul{margin:20px 0 0;}
 .introduce_org .org2>span{background:#00557c;color:#fff;}
 .introduce_org .org2{border:1px solid;margin:0 0 20px;position:relative;}
-.introduce_org .org2:last-child{/* margin:0; */}
 .introduce_org .org2:after{content:"";display:block;width:1px;height:20px;background:#dadada;position:absolute;top:100%;left:50%;}
 .introduce_org .org2:last-child:after{width:0;}
 .introduce_org .org2 ul{padding:10px}
@@ -82,7 +80,7 @@
 .gochang .quicklink p{padding:10px 0 17px 30px;position:relative;text-align: center}
 .gochang .quicklink p:before{width:10px;height:10px;background:black;border-radius:50%;display:inline-block;position:absolute;top:15px;left:-5px;content:""}
 .gochang .quicklink p:after{display:block;clear:both;content:""}
-.gochang .quicklink strong{width:47%;margin:0 1.5em 0 0;float:left;font-size:1.125rem;line-height:24px;display:inline-block;word-break:keep-all;}
+.gochang .quicklink strong{width:47%;margin:0 1.5em 0 0;font-size:1.125rem;line-height:24px;display:inline-block;word-break:keep-all;}
 .gochang .quicklink a{padding:4px 20px 20px;position:relative;display:inline-block}
 .gochang .quicklink i{height:22px;width:3px;background:green;position:absolute;top:0;}
 .gochang .quicklink i:before{height:3px;width:10px;content:'';background:inherit;position:absolute;top:0;left:0;}
@@ -197,7 +195,7 @@
 .t_info .v_date{font:3.75rem 'DoHyeon';color:#fff;text-align:center;text-shadow:0px 0px 12px rgba(0,0,0,.75)}
 .t_info .v_date span{display:inline-block;position:relative}
 .t_info .v_date .day{color:#f6ff00;}
-.t_info .v_date span:before{width:36px;height:36px;background:url(http://www.bamboofestival.co.kr//images/main/icon_main.png) -276px -8px;display:block;position:absolute;content:""}
+.t_info .v_date span:before{width:36px;height:36px;background:url(../images/content/img06-03.png) -276px -8px;display:block;position:absolute;content:""}
 .t_info .v_date .d:before{bottom:10px;left:-26px;}
 .t_info .v_date .day:before{top:-22px;right:-21px;transform:rotate(90deg);}
 @media all and (max-width:374px) {
