@@ -1,13 +1,13 @@
 @import 'variable', 'mixin';
 
 body{background:#f8f8f8}
-header{background: white;}
-/*
-.gnb{
-    h1{}
+header{width:100%;height:90px;display: flex;justify-content: center;align-content: center;background: white;
+	h1{
+		background: icon(logo, '04cf5c') no-repeat;
+		width:50px;height:50px;
+		background-size:contain;
+	}
 }
-*/
-
 main{
     article{margin:2rem auto;}
     article:first-child{margin-top:0;}
@@ -16,10 +16,11 @@ main{
 footer{
     min-height:120px;background: white;
     .fnb{display:flex;flex-wrap:wrap;justify-content: center;text-align: center;letter-spacing:0;color:#333;
-        a{
-           margin:0 .625rem;padding:.625rem 1em;border-radius:20px; text-transform: uppercase;position:relative;overflow: hidden;
+        a{margin:0 .625rem;padding:.625rem 1em;border-radius:20px; text-transform: uppercase;position:relative;overflow: hidden;
             &:before{width:0;height:100%;@include bgColor(background, cMain, 1);transition: .5s ease; display:block;position:absolute;top:0;left:0; content: "";}
             address{@include fontSizeStyle(.875rem, 400);position:relative;z-index: 1;}
+			&.github i{background: icon(git, '000000') no-repeat;display: inline-block;width:22px;height:22px;background-size:contain;vertical-align: middle;}
+			&.gitblog i{background: url(https://seraphinaciel.github.io/assets/images/logo.png) no-repeat;display: inline-block;width:22px;height:22px;background-size:contain;vertical-align: middle;}
             &:hover{
                 &::before{width:100%}
                 svg{background: white;border-color: white}
@@ -27,16 +28,15 @@ footer{
         }
         i{@include fontSizeStyle(1.375rem, 400);margin-right:.625rem;}
         svg{margin-right:.625rem;border-radius:50%;border: 1px solid transparent;vertical-align: middle}
-        .copy{width:100%;text-transform: capitalize;margin-top: 1rem;@include fontSizeStyle(1rem, 400);}
     }
+    .copy{width:100%;text-transform: capitalize;margin-top: 1rem;@include fontSizeStyle(1rem, 400);text-align: center;letter-spacing: 0;}
 }
 
-@media all and (max-width:600px){
-	.fnb{
-		a{padding:8px;margin:10px 0;border-radius:0;
-			&:nth-child(2){border-left: 1px  #ccc;border-right: 1px  #ccc;padding:8px 18px}
-		}
-	} 
+
+@media all and (min-width:1000px){
+footer{padding:0 15vw;
+     .copy{width:auto;margin:6px 0 0 auto;}
+}
 }
 
 .btnTop {position: fixed;right: 5vw;bottom: 10px;display: inline-block;z-index: 9;width: 40px;height: 40px;@include fontSizeStyle(.875rem, 400);text-align: center;line-height: 3;letter-spacing: 1px;@include bgColor(background, cMainDark, 1);border-radius: 50%;padding: 5px;transform: translate3d(0, 50px, 0);transition: .3s cubic-bezier(.7, 1, .7, 1);opacity: 0;text-transform: uppercase;
