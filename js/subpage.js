@@ -28,7 +28,7 @@ const subTitle = [
 //	'전북교육청',
 //	'대구고등학교',
 //	'익산시 체육시설예약',
-	'비짓전주',
+	// 추후 오픈 후 공개 '비짓전주',
 	// '임실군청',
 //	'군산대 학과'
 ]
@@ -63,7 +63,7 @@ if (localName === 0) {
 	prevBtn.classList.add("disabled")
 	prevBtn.innerHTML = `<div><span>이전프로젝트 <strong>없습니다</strong></span></div>`;
 	prevBtn.href='javascript:void(0);';
-} else if (localName === 6) {
+} else if (localName === 5) {
 	nextBtn.classList.add("disabled")
 	nextBtn.innerHTML = `<div><span>다음프로젝트 <strong>없습니다</strong></span></div>`;
 	nextBtn.href='javascript:void(0);';
