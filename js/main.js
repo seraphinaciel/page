@@ -26,7 +26,7 @@ const projectName = [
     //	{title:'전북교육청', type:'16개 통합사업'},
     //	{title:'대구고등학교', type:'콘텐츠 보완'},
     //	{title:'익산시 체육시설예약', type:'콘텐츠 보완'},
-    // 오픈하고 공개.... ㅠ {title: '비짓전주',type: '신규사업'}, 
+    {title: '비짓전주',type: '신규사업'}, 
     // {title: '임실군청',type: '7개 통합사업'},
     //	{title:'군산대 학과', type:'개편 사업'}
 ]
