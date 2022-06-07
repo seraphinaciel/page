@@ -224,7 +224,7 @@
   display: none;
 }
 
-.projectList figure:nth-of-type(5) img {
+.projectList figure:nth-of-type(6) img {
   left: 0;
   -webkit-transform: translate(0);
           transform: translate(0);
