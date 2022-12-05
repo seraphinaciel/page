@@ -51,10 +51,10 @@ for (let num = 0; num < projectName.length; num++) {
 
 //project → load more button
 $(document).ready(function() { 
-	$(".projectList figure").slice(0, 4).show();
+	$(".projectList figure").slice(0, 3).show();
 	$(".btn_readMore").on("click", function(e) {
 		e.preventDefault();
-		$(".projectList figure:hidden").slice(0, 4).slideDown();
+		$(".projectList figure:hidden").slice(0, 3).slideDown();
 		if ($(".projectList figure:hidden").length == 0) {
 			$(".btn_readMore").text("").addClass("noContent");
 		}
